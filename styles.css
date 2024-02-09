@@ -10,19 +10,29 @@
   font: inherit;
 }
 
-body {
-  min-height: 100vh;
+html {
+  scroll-padding-top: 59px;
 }
 
-img-wrapper {
-  max-height: 80%;
-  min-height: 60%;
-  width: auto;
+body {
+  min-height: 100vh;
+  margin: 59px auto 0;
+}
+
+img {
+  display: block;
 }
 
 main {
   display: flex;
   flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
 nav ul {
@@ -32,4 +42,5 @@ nav ul {
 
 nav li {
   display: inline-block;
+  margin: 20px;
 }

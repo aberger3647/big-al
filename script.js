@@ -96,6 +96,7 @@ for (let i = 0; i < content.length; i++) {
 
   const div1 = document.createElement("article");
   div1.style.backgroundColor = "lightblue";
+  div1.style.padding = "50px";
 
   const div2 = document.createElement("div");
   div2.style.backgroundColor = "yellow";

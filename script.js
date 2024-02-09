@@ -69,32 +69,37 @@ const content = [
     sectionid: "contact",
     header: "Contact",
     copy: "Contact stuff",
-    img: "IMG_9601.JPG",
+    img: "IMG_9601.jpg",
     alt: "Alex doing a straddle handstand in front of the HPG Logo",
   },
 ];
 
-for (let i = 0; i < sections.length; i++) {
+for (let i = 0; i < content.length; i++) {
   const section = document.createElement("section");
-  section.id = sections[i];
+  section.id = content[i].sectionid;
   section.style.display = "flex";
 
   const main = document.querySelector("main");
   main.appendChild(section);
 
   const div1 = document.createElement("article");
-  div1.style.backgroundColor = "blue";
+  div1.style.backgroundColor = "lightblue";
 
   const div2 = document.createElement("div");
   div2.style.backgroundColor = "yellow";
 
   section.appendChild(div1);
   section.appendChild(div2);
-}
 
-const copy = document.getElementsByTagName("article");
-for (let i = 0; i < headers.length; i++) {
-  const header = document.createElement("h2");
-  header.textContent = header[i];
-  copy.appendChild(header);
+  const header = document.createElement('h2');
+  header.textContent = content[i].header;
+  div1.appendChild(header);
+  
+  const p = document.createElement('p');
+  div1.appendChild(p);
+  p.textContent = content[i].copy;
+
+const image = document.createElement('img');
+div2.appendChild(image);
+image.setAttribute("src", `./img/${content[i].img}`)
 }

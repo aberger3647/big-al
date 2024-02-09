@@ -86,9 +86,8 @@ for (let i = 0; i < content.length; i++) {
   const section = document.createElement("section");
   section.id = content[i].sectionid;
 
-  section.style.display = "flex";
   if (isEven(i)) {
-    section.style.flexDirection = "row-reverse";
+    section.classList.add("row-reverse");
   }
 
   const main = document.querySelector("main");

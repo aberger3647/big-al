@@ -44,3 +44,17 @@ nav li {
   display: inline-block;
   margin: 20px;
 }
+
+section {
+  display: flex;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1200px) {
+  .row-reverse, section {
+    flex-direction: column;
+  }
+}

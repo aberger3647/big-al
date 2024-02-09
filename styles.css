@@ -14,10 +14,10 @@ body {
   min-height: 100vh;
 }
 
-img {
-  /* display: block; */
-  vertical-align: middle;
-  max-width: 100%;
+img-wrapper {
+  max-height: 80%;
+  min-height: 60%;
+  width: auto;
 }
 
 main {
@@ -25,11 +25,7 @@ main {
   flex-direction: column;
 }
 
-section {
-  display: flex;
-}
-
-ul {
+nav ul {
   display: flex;
   justify-content: space-around;
 }

@@ -74,10 +74,22 @@ const content = [
   },
 ];
 
+const isEven = (num) => {
+  if (num % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 for (let i = 0; i < content.length; i++) {
   const section = document.createElement("section");
   section.id = content[i].sectionid;
+
   section.style.display = "flex";
+  if (isEven(i)) {
+    section.style.flexDirection = "row-reverse";
+  }
 
   const main = document.querySelector("main");
   main.appendChild(section);
@@ -87,19 +99,20 @@ for (let i = 0; i < content.length; i++) {
 
   const div2 = document.createElement("div");
   div2.style.backgroundColor = "yellow";
+  div2.setAttribute("class", "img-wrapper");
 
   section.appendChild(div1);
   section.appendChild(div2);
 
-  const header = document.createElement('h2');
+  const header = document.createElement("h2");
   header.textContent = content[i].header;
   div1.appendChild(header);
-  
-  const p = document.createElement('p');
+
+  const p = document.createElement("p");
   div1.appendChild(p);
   p.textContent = content[i].copy;
 
-const image = document.createElement('img');
-div2.appendChild(image);
-image.setAttribute("src", `./img/${content[i].img}`)
+  const image = document.createElement("img");
+  div2.appendChild(image);
+  image.setAttribute("src", `./img/${content[i].img}`);
 }

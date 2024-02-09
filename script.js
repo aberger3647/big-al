@@ -95,18 +95,23 @@ for (let i = 0; i < content.length; i++) {
 
   const div1 = document.createElement("article");
   div1.style.backgroundColor = "lightblue";
-  div1.style.padding = "50px";
 
   const div2 = document.createElement("div");
   div2.style.backgroundColor = "yellow";
-  div2.setAttribute("class", "img-wrapper");
+  div2.classList.add("img-wrapper");
 
   section.appendChild(div1);
   section.appendChild(div2);
 
-  const header = document.createElement("h2");
-  header.textContent = content[i].header;
-  div1.appendChild(header);
+  if (i === 0) {
+    const header = document.createElement("h1");
+    header.textContent = content[i].header.toUpperCase();
+    div1.appendChild(header);
+  } else {
+    const header = document.createElement("h2");
+    header.textContent = content[i].header;
+    div1.appendChild(header);
+  }
 
   const p = document.createElement("p");
   div1.appendChild(p);

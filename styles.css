@@ -47,6 +47,10 @@ section {
 
 article {
   padding: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img {
@@ -55,6 +59,7 @@ img {
 
 .row-reverse {
   flex-direction: row-reverse;
+  background-color: rgb(240, 240, 240);
 }
 
 h1,
@@ -66,6 +71,7 @@ h2 {
 h1 {
   font-family: "Alfa Slab One";
   font-size: 100px;
+  line-height: 90px;
 }
 
 h2 {
@@ -73,10 +79,12 @@ h2 {
   font-size: 50px;
 }
 
-p, a {
+p,
+a {
   font-family: "Zilla Slab";
   font-size: 20px;
   line-height: 28px;
+  max-width: 900px;
 }
 
 a {
@@ -85,14 +93,34 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
+  html {
+    scroll-padding-top: 135px;
+  }
+
   .row-reverse,
   section {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     max-width: 100vw;
   }
 
+  article {
+    padding: 30px;
+  }
+
   img {
     max-width: 100%;
+  }
+  
+  nav {
+    z-index: 2;
+  }
+
+  nav ul {
+    display: inline;
+  }
+
+  #bigal:nth-child(2) {
+    margin-top: 80px;
   }
 }

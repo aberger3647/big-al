@@ -53,6 +53,10 @@ article {
   align-items: center;
 }
 
+p {
+  margin-bottom: 30px;
+}
+
 img {
   display: block;
 }
@@ -111,13 +115,14 @@ a {
   img {
     max-width: 100%;
   }
-  
+
   nav {
     z-index: 2;
   }
 
   nav ul {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   #bigal:nth-child(2) {

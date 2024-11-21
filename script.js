@@ -19,7 +19,25 @@ const copy = {
   handstand? Get upside down with me! Already know how to handstand?
   We can focus on skills like handstand press and pushup.
   </p>`,
-  testimonialsCopy: '<p>"Committing to a healthier lifestyle was a daunting task and meant confronting a lot of unpleasant truths about where I was starting from. At only 32 I was already finding it harder to pick myself up off the ground and needed a change. Alex has been such an integral part of my success in working to lose weight and build muscle because she knows it&#39s about more than just the physical changes. She doesn&#39t just check off whether I hit my numbers. This is truly a judgement free, supportive environment from someone who embodies active, health-conscious living! Alex reminds me how far I&#39ve come, asks where I&#39m at mentally and even when things don&#39t go according to plan - we always strategize to make the next week better. Her experience and knowledge of strength training has helped me grow stronger, increase mobility and boost my confidence. I really look forward to my workouts because the programming feels so customized to my personal goals. I can&#39t say enough good things about my experience, I highly recommend you train with Alex!." -Alexis G</p><p>"Alex is great, she&#39s super kind, patient, and knowledgeable." - Steven G</p><p>"Big Al works in all barbell arenas, weight lifting, body building and power lifting.  If you don&#39t know the difference, that&#39s her specialty.  She&#39s extremely knowledgable and great to work with, which comes in handy during the rest times.  I highly recommend having a consult with Big Al and see what you think. Make it a habit!" - Hill M</p>',
+  testimonialsCopy: `<p>"Committing to a healthier lifestyle was a daunting task and meant confronting a lot of unpleasant truths about where I was starting from. At only 32 I was already finding it harder to pick myself up off the ground and needed a change. Alex has been such an integral part of my success in working to lose weight and build muscle because she knows it&#39s about more than just the physical changes. She doesn&#39t just check off whether I hit my numbers. This is truly a judgement free, supportive environment from someone who embodies active, health-conscious living! Alex reminds me how far I&#39ve come, asks where I&#39m at mentally and even when things don&#39t go according to plan - we always strategize to make the next week better. Her experience and knowledge of strength training has helped me grow stronger, increase mobility and boost my confidence. I really look forward to my workouts because the programming feels so customized to my personal goals. I can&#39t say enough good things about my experience, I highly recommend you train with Alex!." -Alexis G</p>
+  
+  <p>"Alex is the only trainer I have ever had and she is phenomenal!!!!! She’s knowledgeable, positive, and buff as hell (so very inspiring). She had excellent expertise for calisthenics and catered the routine to my preferences, which included doing all exercises on olympic rings at home. I feel way more confident about my form, strength, and endurance after working out with her. She not only has lots of practical guidance but also pushed me to believe I am stronger than I previously thought. Would recommend to anyone!! ᕙ(⇀‸↼‶)ᕗ" -Katie W</p>
+  
+  <p>"“Big Al” is and continues to be a great experience. Her positive attitude and daily commitment is a real motivator. She’s helped turn my flab into muscle and my metabolism is on the rise.
+
+I’ve been working out with her for over a year without burnout. And this is a first in my 30 plus years of the yo-yo routine.
+
+Come sign up and enjoy the experience! It’s a guaranteed lifestyle change.
+
+Client #1" -Hill M</p>'
+  
+  <p>"alex really helped me get familiar with strength training & create a strong foundation for the rest of my weight lifting journey!" -Ashley A</p>
+  
+  <p>"Alex helped give me the push to join the gym and start up a regular routine. I found her approach very clear-cut and non-judgmental. The nutrition portion was key to help me visualize how much a certain portion was using the palm as a point of reference. I really liked the app that she used because I could see each exercise and the corresponding short video for that exercise which allowed me to familiarize myself with all of the machines at my new gym. Alex will help you get to know the machines at your gym or whatever your routine is. she's very detailed at noting your progress through the app and communicates regularly! I would also send her videos of my form for direct feedback and that was helpful as well! If you're looking for support with a fitness routine and that accountability aspect, Alex is the way to go!" -Gina F</p>
+
+  <p>"I worked with Alex for several months when I was first getting in to strength training. She sent me a program monthly, and we had an in person session every week. In between in person sessions I could send in form checks or other questions, and with her years of experience she always had helpful answers and advice. She was really instrumental in teaching me proper technique, and in particular building confidence in the big compound movements like squat, bench, and deadlift. She was also good at asking questions about nutrition and recovery outside of the gym, and all around wonderful to work with!" -Brandon C</p>
+  
+  `,
   servicesCopy: `
 
   <p>
@@ -41,8 +59,12 @@ const copy = {
   $125 per week (1 in-person session)/$210 per week (2 in-person sessions)</p>
 
   <p>All sales are final.</p>
+
+  <p>I train Monday-Friday afternoons and evenings.</p>
+  <p>Please give 24 hours notice for cancelled or rescheduled sessions. Less than 24 hours notice will result in a forfeited session.</p>
 `,
-contactCopy:  "<p>Call or text me at 727-504-4123, or shoot me an email at aberger3647@gmail.com.</p>"
+contactCopy:  `
+<p>Call or text me at 727-504-4123, or shoot me an email at aberger3647@gmail.com.</p>`
 }
 
 const content = [

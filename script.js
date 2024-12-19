@@ -64,7 +64,7 @@ Client #1" -Hill M</p>'
   <p>Please give 24 hours notice for cancelled or rescheduled sessions. Less than 24 hours notice will result in a forfeited session.</p>
 `,
 contactCopy:  `
-<p>Call or text me at 727-504-4123, or shoot me an email at aberger3647@gmail.com.</p>`
+<p>Call or text me at 727-504-4123, or shoot me an email at info@bigalstrength.com.</p>`
 }
 
 const content = [

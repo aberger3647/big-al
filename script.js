@@ -42,7 +42,7 @@ Client #1" -Hill M</p>'
 
   <p>
   <span>In-Person Coaching.</span> Take all the guesswork out of the gym. Meet at the gym to work together 3 times per
-  week. You'll get: a customized program and an hour each session with me including demonstrations and guidance for safely and effectively performing movements. $95 per session
+  week. You'll get: a customized program and an hour each session with me including demonstrations and guidance for safely and effectively performing movements. 
   </p>
 
 <p>
@@ -50,13 +50,13 @@ Client #1" -Hill M</p>'
   You'll get: A customized program every week, tailored to your
   goals. Send me videos for form check and review. Coach on
   call—text me anytime, and I will get back to you within 24 hours
-  (though usually sooner). $150 per month
+  (though usually sooner).
   </p>
 
 <p>
   <span>Hybrid Coaching.</span> Work together in the gym 1 or 2 times per week,
   and work on your own the other days with your tailored program. You'll get everything that comes with online training, plus in-person coaching.
-  $125 per week (1 in-person session)/$210 per week (2 in-person sessions)</p>
+ </p>
 
   <p>All sales are final.</p>
 

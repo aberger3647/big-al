@@ -1,3 +1,44 @@
 export const Footer = () => {
-  return <main>Footer</main>;
+  return (
+    <footer className="border 1 solid p-8 flex flex-col md:flex-row w-full">
+      <div className="m-4">
+        <h3 className="text-md font-semibold">contact</h3>
+        <div className="flex flex-col gap-4">
+        <p>alex berger</p>
+        <p>info@bigalstrength.com</p>
+        <p>727 504 4123</p>
+        </div>
+      </div>
+
+      <div className="m-4">
+        <h3 className="text-md font-semibold mb-3">training hours</h3>
+        <div className="flex">
+          <div className="flex flex-col gap-2">
+            <span className="font-medium text-sm">monday</span>
+            <span className="font-medium text-sm">tuesday</span>
+            <span className="font-medium text-sm">wednesday</span>
+            <span className="font-medium text-sm">thursday</span>
+            <span className="font-medium text-sm">friday</span>
+          </div>
+          <div className="flex flex-col gap-2 ml-8 mb-3">
+            <p className="text-sm">12pm-8pm</p>
+            <p className="text-sm">12pm-8pm</p>
+            <p className="text-sm">12pm-8pm</p>
+            <p className="text-sm">12pm-8pm</p>
+            <p className="text-sm">12pm-8pm</p>
+          </div>
+        </div>
+        <p className="text-xs">open for inquiries daily</p>
+      </div>
+
+      <div className="m-4">
+                <button 
+          className="border solid 1 py-2 px-4 rounded-md"
+        >
+          Get your free consultation
+        </button>
+      </div>
+
+    </footer>
+  );
 };

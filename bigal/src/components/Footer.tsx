@@ -1,6 +1,9 @@
+import { InquiryForm } from "./InquiryForm";
+
 export const Footer = () => {
   return (
-    <footer className="border 1 solid p-8 flex flex-col md:flex-row w-full">
+    <>
+    <footer className="border 1 solid p-8 flex flex-col md:flex-row w-full space-between">
       <div className="m-4">
         <h3 className="text-md font-semibold">contact</h3>
         <div className="flex flex-col gap-4">
@@ -31,14 +34,17 @@ export const Footer = () => {
         <p className="text-xs">open for inquiries daily</p>
       </div>
 
-      <div className="m-4">
-                <button 
-          className="border solid 1 py-2 px-4 rounded-md"
+      <div className="flex justify-center mt-6">
+        <button 
+          className="border solid py-2 px-4 rounded-md text-center w-40"
         >
-          Get your free consultation
+          get your free consultation
         </button>
       </div>
 
     </footer>
+
+    <InquiryForm/>
+    </>
   );
 };

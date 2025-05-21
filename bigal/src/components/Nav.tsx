@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-const NavLinks = ({ isMobile, toggleNavbar }) => {
+interface NavLinksProps {
+  isMobile: boolean;
+  toggleNavbar?: () => void;
+}
+
+const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
   return (
     <>
       <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>

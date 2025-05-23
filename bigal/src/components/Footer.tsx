@@ -1,5 +1,3 @@
-import { InquiryForm } from "./InquiryForm";
-
 export const Footer = () => {
   return (
     <>
@@ -43,8 +41,6 @@ export const Footer = () => {
       </div>
 
     </footer>
-
-    <InquiryForm/>
     </>
   );
 };

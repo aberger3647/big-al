@@ -1,6 +1,4 @@
-import headshot_768 from "../assets/optimized_photos/headshot_768.jpg";
-import headshot_1200 from "../assets/optimized_photos/headshot_1200.jpg";
-import headshot_1600 from "../assets/optimized_photos/headshot_1600.jpg";
+import { images } from '../assets/optimized_photos';
 
 export const About = () => {
   return (
@@ -30,10 +28,10 @@ export const About = () => {
         consultation.
       </p>
       <picture>
-        <source media="(min-width:1600px)" srcSet={headshot_1600} />
-        <source media="(min-width:1200px)" srcSet={headshot_1200} />
-        <source media="(min-width:768px)" srcSet={headshot_768} />
-        <img src={new URL(`${headshot_768}`, import.meta.url).href} />
+        <source media="(min-width:1600px)" srcSet={images.headshot_1600} />
+        <source media="(min-width:1200px)" srcSet={images.headshot_1200} />
+        <source media="(min-width:768px)" srcSet={images.headshot_768} />
+        <img src={new URL(`${images.headshot_768}`, import.meta.url).href} />
       </picture>
     </main>
   );

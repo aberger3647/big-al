@@ -1,4 +1,9 @@
-const reviews = [
+interface Review {
+  name: string;
+  review: string;
+}
+
+export const reviews: Review[] = [
   {
     name: "Nicolas Barham",
     review: `Alex puts the personal in personal training. With a wholistic approach considering the client’s success criteria, she tailors workout plans, dietary and lifestyle habits that goes beyond simple workout plans and recommendations. After a week with Alex I’ve been able to create a workout plan unique to my body and goals. Just two full months after working with Alex I’ve noticed significant gains in both strength and appearance. 10 out of 10!`,

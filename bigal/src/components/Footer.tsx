@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <>
-    <footer className="border 1 solid p-8 flex flex-col md:flex-row w-full space-between">
+    <footer className="border 1 solid p-8 flex flex-col items-center md:flex-row w-full align-center md:justify-around md:items-start">
       <div className="m-4">
         <h3 className="text-md font-semibold">contact</h3>
         <div className="flex flex-col gap-4">
@@ -32,7 +32,7 @@ export const Footer = () => {
         <p className="text-xs">open for inquiries daily</p>
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-6 md:m-4">
         <button 
           className="border solid py-2 px-4 rounded-md text-center w-40"
         >

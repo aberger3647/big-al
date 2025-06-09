@@ -1,13 +1,12 @@
 export const Rates = () => {
   return (
-    <main className="p-8">
+    <main className="p-4 md:p-8">
       <h1 className="text-3xl text-center">rates</h1>
 
       <div className="m-4 gap-4 flex flex-col">
         <div>
           <h2 className="text-xl">12 one-hour sessions</h2>
           <p>3x/week one-on-one</p>
-          <p>$300/week</p>
           <p>$1200/month</p>
         </div>
 

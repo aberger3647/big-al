@@ -37,7 +37,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Services
         </NavLink>
       </li>
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      {/* <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
         <NavLink
           to="/rates"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -45,8 +45,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
         >
           Rates
         </NavLink>
-      </li>
-
+      </li> */}
       <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
         <NavLink
           to="/blog"
@@ -56,6 +55,15 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Blog
         </NavLink>
       </li>
+      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+        <NavLink
+          to="/contact"
+          className={`${isMobile ? "block text-center" : ""}`}
+          onClick={toggleNavbar}
+        >
+          Contact
+        </NavLink>
+      </li>{" "}
       <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
         <NavLink
           to="/testimonials"

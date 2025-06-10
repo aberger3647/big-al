@@ -5,4 +5,5 @@ export * from "./Services";
 export * from "./Rates";
 export * from "./Testimonials";
 export * from "./Blog";
+export * from "./Contact";
 export * from "./Footer";

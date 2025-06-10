@@ -1,121 +1,131 @@
 export const InquiryForm = () => {
   return (
-    <form className="m-4">
-      <h3 className="text-md font-semibold mb-8">submit inquiry</h3>
+    <form className="p-6 border bg-[#ff4a26] md:max-w-1/2 m-4">
       <div className="flex flex-col max-w-xl mx-auto">
-        <div className="flex gap-8 flex-col md:flex-row">
+        <div className="flex gap-8 flex-col">
+          <p className="text-2xl mb-4 text-white">Inquiry Form</p>
           <div className="flex flex-col gap-4">
-
             <div className="flex items-center">
-              <label htmlFor="fname" className="w-32 text-left ">
-                first name:
+              <label htmlFor="fname" className="w-32 text-left text-sm">
+                First Name:
               </label>
               <input
                 type="text"
                 id="fname"
                 name="fname"
-                className="border border-solid border-gray-300 px-2 py-1 w-48 flex-1"
+                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="lname" className="w-32 text-left ">
-                last name:
+              <label htmlFor="lname" className="w-32 text-left text-sm">
+                Last Name:
               </label>
               <input
                 type="text"
                 id="lname"
                 name="lname"
-                className="border border-solid border-gray-300 px-2 py-1 w-48 flex-1"
+                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="email" className="w-32 text-left ">
-                email address:
+              <label htmlFor="email" className="w-32 text-left text-sm">
+                Email Address:
               </label>
               <input
                 type="text"
                 id="email"
                 name="email"
-                className="border border-solid border-gray-300 px-2 py-1 w-48 flex-1"
+                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="phone" className="w-32 text-left ">
-                phone number:
+              <label htmlFor="phone" className="w-32 text-left text-sm ">
+                Phone Number:
               </label>
               <input
                 type="text"
                 id="phone"
                 name="phone"
-                className="border border-solid border-gray-300 px-2 py-1 w-48 flex-1"
+                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
           </div>
 
-          <div className="flex flex-col p-4 items-center">
+          <div className="flex flex-col">
             <div>
-            <label htmlFor="goals" className="mb-2">
-              your goals:
-            </label>
-            <div className="flex items-center h-8">
-              <input
-                type="checkbox"
-                id="stronger"
-                name="stronger"
-                value="Get stronger"
-                className="mr-2"
-              />
-              <label htmlFor="stronger">get stronger</label>
+              <label htmlFor="goals" className="mb-2">
+                <p className="text-2xl mb-4 text-white">Your Goals:</p>
+              </label>
+              <div className="flex items-center h-8">
+                <input
+                  type="checkbox"
+                  id="stronger"
+                  name="stronger"
+                  value="Get stronger"
+                  className="mr-2"
+                />
+                <label htmlFor="stronger">Get Stronger</label>
+              </div>
+              <div className="flex items-center h-8">
+                <input
+                  type="checkbox"
+                  id="health"
+                  name="health"
+                  value="Health & longevity"
+                  className="mr-2"
+                />
+                <label htmlFor="health">Health & Longevity</label>
+              </div>
+              <div className="flex items-center h-8">
+                <input
+                  type="checkbox"
+                  id="muscle"
+                  name="muscle"
+                  value="Build muscle"
+                  className="mr-2"
+                />
+                <label htmlFor="muscle">Build Muscle</label>
+              </div>
+              <div className="flex items-center h-8">
+                <input
+                  type="checkbox"
+                  id="performance"
+                  name="performance"
+                  value="Athletic performance"
+                  className="mr-2"
+                />
+                <label htmlFor="performance">Athletic Performance</label>
+              </div>
+              <div className="flex items-center h-8">
+                <input
+                  type="checkbox"
+                  id="weight"
+                  name="weight"
+                  value="Lose weight"
+                  className="mr-2"
+                />
+                <label htmlFor="weight">Lose Weight</label>
+              </div>
             </div>
-            <div className="flex items-center h-8">
-              <input
-                type="checkbox"
-                id="health"
-                name="health"
-                value="Health & longevity"
-                className="mr-2"
-              />
-              <label htmlFor="health">health & longevity</label>
-            </div>
-            <div className="flex items-center h-8">
-              <input
-                type="checkbox"
-                id="muscle"
-                name="muscle"
-                value="Build muscle"
-                className="mr-2"
-              />
-              <label htmlFor="muscle">build muscle</label>
-            </div>
-            <div className="flex items-center h-8">
-              <input
-                type="checkbox"
-                id="performance"
-                name="performance"
-                value="Athletic performance"
-                className="mr-2"
-              />
-              <label htmlFor="performance">athletic performance</label>
-            </div>
-            <div className="flex items-center h-8">
-              <input
-                type="checkbox"
-                id="weight"
-                name="weight"
-                value="Lose weight"
-                className="mr-2"
-              />
-              <label htmlFor="weight">lose weight</label>
-            </div>
+          </div>
 
-            </div>
+          <div>
+            <label htmlFor="message">
+              <p className="text-2xl mb-4 text-white">Message:</p>
+            </label>
+            <textarea className="border h-full"></textarea>
           </div>
         </div>
+
         <div className="flex justify-center mt-6">
-          <button type="submit" className="border solid 1 py-2 px-4 rounded-md">
-            get your free consultation
+          <button
+            type="submit"
+            className="border solid 1 py-2 px-4 rounded-md bg-yellow-500 hover:bg-yellow-600"
+          >
+            Submit Inquiry
           </button>
         </div>
+
       </div>
     </form>
   );

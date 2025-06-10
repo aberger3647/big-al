@@ -6,11 +6,11 @@ interface ImageProps {
 }
 export const Image = ({ src1600, src1200, src768, alt = "" }: ImageProps) => {
   return (
-    <picture>
+    <picture >
       <source media="(min-width:1600px)" srcSet={src1600} />
       <source media="(min-width:1200px)" srcSet={src1200} />
       <source media="(min-width:768px)" srcSet={src768} />
-     <img src={new URL(`${src768}`, import.meta.url).href} alt={alt} />
+     <img className="border" src={new URL(`${src768}`, import.meta.url).href} alt={alt} />
     </picture>
   )
 }

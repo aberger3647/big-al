@@ -1,15 +1,16 @@
-import { images } from "../assets/optimized_photos";
-import { Image } from "./Image";
+import { Header } from "./Header"
+import { images } from "../assets/optimized_photos";;
 
 export const About = () => {
   return (
     <main className="p-4 md:p-8 flex flex-col items-center">
-      <h1 className="text-3xl text-center">about big al</h1>
-      <Image
-        src1600={images.headshot_1600}
+          <Header
+         src1600={images.headshot_1600}
         src1200={images.headshot_1200}
         src768={images.headshot_768}
-      />
+              title="About Alex"
+            />
+
       <p className="m-4 max-w-4xl">
         Hey! I'm Alex Berger, aka Big Al. I'm a Certified Personal Trainer in
         Austin, TX. I grew up in St. Petersburg, Florida, playing tennis, riding

@@ -1,88 +1,114 @@
 import { images } from "../assets/optimized_photos";
 import { Image } from "./Image";
+import { Header } from "./Header";
+import { Button } from "./Button";
 
 export const Services = () => {
   return (
     <main>
-      <h1 className="text-3xl text-center">services</h1>
+      <Header
+        src1600={images.nikkideadlift_1600}
+        src1200={images.nikkideadlift_1200}
+        src768={images.nikkideadlift_768}
+        title="Services"
+      />
 
       <div className="gap-4 flex flex-col items-center">
-        <div className="-mx-12">
-          <Image
-            src1600={images.nikkideadlift_1600}
-            src1200={images.nikkideadlift_1200}
-            src768={images.nikkideadlift_768}
-          />
-        </div>
-
-      
-          <div className="flex flex-col gap-6 m-4">
-            <div className="flex flex-col md:flex-row gap-12 justify-center">
-            <div className="border p-6 md:p-8">
-              <h2 className="text-2xl mb-4 text-center">
-                One-on-One Personal Training{" "}
+        <div className="flex flex-col gap-6 m-4">
+          <div className="flex flex-col md:flex-row gap-12 justify-center">
+            <div className="border p-6 md:p-8 bg-[#40bdf7] flex-1">
+              <h2 className="text-2xl mb-4 text-center text-white">
+                1-on-1 Personal Training
               </h2>
-              <ul className="md:leading-10 text-center">
-                <li>one hour of hands-on guidance in the gym</li>
-                <hr className="m-6 text-slate-300"></hr>
+              {/* <hr className="mx-20 my-6 text-[#009be3]"></hr> */}
+              <ul className=" text-center">
                 <li>
-                  learn to safely and effectively use free weights and machines
+                  One hour of{" "}
+                  <span className="font-bold">hands-on guidance</span> in the
+                  gym
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#009be3]"></hr>
                 <li>
-                  develop bodily control with calisthenics (body weight fitness)
+                  Learn to{" "}
+                  <span className="font-bold">safely and effectively</span> use
+                  free weights and machines
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#009be3]"></hr>
                 <li>
-                  gain awareness of and work on improving dysfunctional movement
-                  patterns
+                  <span className="font-bold">Develop bodily control</span> with
+                  calisthenics (body weight fitness)
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#009be3]"></hr>
                 <li>
-                  learn progressions to achieve a handstand
+                  Gain awareness of and{" "}
+                  <span className="font-bold">
+                    improve dysfunctional movement patterns
+                  </span>
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#009be3]"></hr>
                 <li>
-                  other thing 1
+                  Learn progressions to{" "}
+                  <span className="font-bold">achieve a handstand</span>
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
-                <li>other thing 2</li>
+                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <li>
+                  Train at{" "}
+                  <a
+                    href="https://hydeparkgym.com/"
+                    className="font-semibold"
+                    target="_blank"
+                  />
+                  Hyde Park Gym
+                  <a />
+                </li>
               </ul>
+              <div className="self-center mt-8">
+                <Button />
+              </div>
             </div>
 
-            <div className="border p-6 md:p-8">
-              <h2 className="text-2xl mb-4 text-center">Online Training </h2>
-              <ul className="md:leading-10 text-center">
-                <li>
-                  take all the guesswork out of the gym with a custom designed
-                  program
+            <div className="border p-6 md:p-8 bg-[#ff4a26] flex-1">
+              <h2 className="text-2xl mb-4 text-center text-white">
+                Online Training{" "}
+              </h2>
+              <ul className="flex flex-col text-center">
+                <li className="max-w-md">
+                  Get a{" "}
+                  <span className="font-bold">custom workout program </span>
+                  personalized to your goals and level of experience with
+                  progression built in
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
-                <li>
-                  get a custom workout program personalized to your
-                  <br className="hidden md:block" /> goals and level of
-                  experience with progression built in{" "}
+                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <li className="max-w-md">
+                  <span className="font-bold">Free workout app</span> includes
+                  videos and instructions for each movement and stores a history
+                  of your progress
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
                 <li>
-                  free workout app includes videos and instructions for
-                  <br /> each movement and stores a history of your progress{" "}
+                  Save your lift videos in the app for{" "}
+                  <span className="font-bold">technique review</span>
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
-                <li>save your lift videos in the app for technique review</li>
-                <hr className="m-6 text-slate-300"></hr>
+                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <li className="max-w-md">
+                  Weekly accountability with check-ins to{" "}
+                  <span className="font-bold">
+                    review workouts, recovery, and answer any questions
+                  </span>
+                </li>
+                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
                 <li>
-                  weekly check-ins to review workouts, recovery, and answer any
-                  questions
+                  <span className="font-bold">Unlimited text support</span> with
+                  24 hr response time
                 </li>
-                <hr className="m-6 text-slate-300"></hr>
-                <li>unlimited text support with 24 hr response time</li>
               </ul>
+              <div className="self-center mt-8">
+                <Button />
+              </div>
             </div>
-</div>
-
           </div>
-          {/* <div>
+        </div>
+        {/* <div>
             <h2 className="text-xl">Nutrition Guidance</h2>
             <ul>
               <li>
@@ -108,7 +134,6 @@ export const Services = () => {
               powerlifting?
             </p>
           </div>*/}
-    
 
         <div className="-mx-12">
           <Image
@@ -117,6 +142,10 @@ export const Services = () => {
             src768={images.nikkibench_768}
           />
         </div>
+
+        <h1 className="text-2xl md:text-5xl text-center m-4 mb-6">
+          Training Offerings
+        </h1>
       </div>
     </main>
   );

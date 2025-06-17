@@ -12,8 +12,10 @@ export const Contact = () => {
         src768={images.nikkishoulderpress_768}
         title="Get in Touch"
       />
+<div className="flex justify-center">
 
       <InquiryForm />
+</div>
 
       <div className="m-4 gap-4 flex flex-col items-center">
         <div className="-mx-12">

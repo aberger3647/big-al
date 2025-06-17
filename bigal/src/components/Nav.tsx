@@ -10,7 +10,7 @@ interface NavLinksProps {
 const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
   return (
     <>
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b py-3 bg-yellow-400" : ""}`}>
         <NavLink
           to="/"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -19,7 +19,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Home
         </NavLink>
       </li>
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/about"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -28,7 +28,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           About
         </NavLink>
       </li>
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/services"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -46,7 +46,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Rates
         </NavLink>
       </li> */}
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/blog"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -55,7 +55,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Blog
         </NavLink>
       </li>
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/contact"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -64,7 +64,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Contact
         </NavLink>
       </li>{" "}
-      <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
+      <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/testimonials"
           className={`${isMobile ? "block text-center" : ""}`}
@@ -99,7 +99,7 @@ export const Nav = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-[20] mx-auto flex h-16 items-center justify-between p-4 border border-b-1 bg-white">
+      <nav className="sticky top-0 z-[20] mx-auto flex h-16 items-center justify-between p-4 border border-b-1 bg-yellow-400">
         <NavLink to="/">
           <h1 className="flex">Female Personal Trainer</h1>
         </NavLink>

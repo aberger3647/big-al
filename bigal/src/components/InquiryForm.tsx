@@ -3,7 +3,7 @@ export const InquiryForm = () => {
     <form className="p-6 border bg-[#ff4a26] md:max-w-1/2 m-4">
       <div className="flex flex-col max-w-xl mx-auto">
         <div className="flex gap-8 flex-col">
-          <p className="text-2xl mb-4 text-white">Inquiry Form</p>
+          <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
           <div className="flex flex-col gap-4">
             <div className="flex items-center">
               <label htmlFor="fname" className="w-32 text-left text-sm">
@@ -54,7 +54,7 @@ export const InquiryForm = () => {
           <div className="flex flex-col">
             <div>
               <label htmlFor="goals" className="mb-2">
-                <p className="text-2xl mb-4 text-white">Your Goals:</p>
+                <p className="text-xl mb-4 text-white text-center">Your Goals:</p>
               </label>
               <div className="flex items-center h-8">
                 <input
@@ -111,9 +111,9 @@ export const InquiryForm = () => {
 
           <div>
             <label htmlFor="message">
-              <p className="text-2xl mb-4 text-white">Message:</p>
+              <p className="text-xl mb-4 text-white text-center">Message:</p>
             </label>
-            <textarea className="border h-full"></textarea>
+            <textarea className="border h-64 w-full p-6"></textarea>
           </div>
         </div>
 

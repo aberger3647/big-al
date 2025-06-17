@@ -4,7 +4,7 @@ import { reviews } from "../assets/reviews.ts";
 
 export const Testimonials = () => {
   return (
-    <main className="p-4 md:p-8">
+    <main>
       <Header
         src1600={images.nikkideadlift_1600}
         src1200={images.nikkideadlift_1200}

@@ -1,8 +1,22 @@
 import { images } from "../assets/optimized_photos";
 import { Header } from "./Header";
 import { reviews } from "../assets/reviews.ts";
+import { useState, useEffect } from "react";
 
 export const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselInfiniteScroll = () => {
+    if (currentIndex === reviews.length - 1) {
+      return setCurrentIndex(currentIndex + 1);
+    }
+    useEffect(() => {
+      const interval = setInterval(() => {
+        carouselInfiniteScroll();
+      }, 3000);
+      // clean up function
+      return () => clearInterval(interval);
+    });
+  };
   return (
     <main>
       <Header
@@ -12,11 +26,14 @@ export const Testimonials = () => {
         title="Testimonials"
       />
 
-      <div className="max-w-xl flex flex-col gap-8">
+      <div className="flex flex-nowrap overflow-hidden gap-8 m-8 max-w-xl">
         {reviews.map((review, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="flex flex-col h-80 min-w-full w-full content-center transition ease-in duration-1000"
+          >
             <p>{review.review}</p>
-            <p>{review.name}</p>
+            <p className="text-xl">{review.name}</p>
           </div>
         ))}
       </div>

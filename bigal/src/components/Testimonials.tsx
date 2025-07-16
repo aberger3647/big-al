@@ -57,17 +57,15 @@ export const Testimonials = () => {
         src768={images.nikkideadlift_768}
         title="Testimonials"
       />
-      <div className="flex flex-nowrap overflow-hidden m-8 max-w-full">
+      <div className="flex flex-nowrap overflow-hidden m-8">
         <div
           className="flex transition-transform duration-1000 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+          style={{ transform: `translateX(-${currentIndex * 576}px` }}
         >
           {reviews.map((review, index) => (
             <div
               key={index}
-              className={`flex flex-col h-80 px-4 transition ease-in duration-1000 ${
-                itemsPerView === 2 ? 'flex-1 min-w-[50%]' : 'flex-1 min-w-full'
-              }`}
+              className="flex flex-col h-80 px-4 transition ease-in duration-1000 w-lg"
             >
               <p className="mb-4 break-words">{review.review}</p>
               <p className="text-xl">{review.name}</p>

@@ -1,7 +1,7 @@
 export const InquiryForm = () => {
   return (
-    <form className="p-6 border bg-[#ff4a26] md:max-w-1/2 m-4">
-      <div className="flex flex-col max-w-xl mx-auto">
+    <form className="p-6 border bg-[#ff4a26] w-xl m-4">
+      <div className="flex flex-col mx-auto">
         <div className="flex gap-8 flex-col">
           <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
           <div className="flex flex-col gap-4">
@@ -56,7 +56,7 @@ export const InquiryForm = () => {
               <label htmlFor="goals" className="mb-2">
                 <p className="text-xl mb-4 text-white text-center">Your Goals:</p>
               </label>
-              <div className="flex items-center h-8">
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
                   id="stronger"
@@ -66,7 +66,7 @@ export const InquiryForm = () => {
                 />
                 <label htmlFor="stronger">Get Stronger</label>
               </div>
-              <div className="flex items-center h-8">
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
                   id="health"
@@ -76,7 +76,7 @@ export const InquiryForm = () => {
                 />
                 <label htmlFor="health">Health & Longevity</label>
               </div>
-              <div className="flex items-center h-8">
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
                   id="muscle"
@@ -86,7 +86,7 @@ export const InquiryForm = () => {
                 />
                 <label htmlFor="muscle">Build Muscle</label>
               </div>
-              <div className="flex items-center h-8">
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
                   id="performance"
@@ -96,7 +96,7 @@ export const InquiryForm = () => {
                 />
                 <label htmlFor="performance">Athletic Performance</label>
               </div>
-              <div className="flex items-center h-8">
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
                   id="weight"
@@ -109,11 +109,59 @@ export const InquiryForm = () => {
             </div>
           </div>
 
+                    <div className="flex flex-col">
+            <div>
+              <label htmlFor="interests" className="mb-2">
+                <p className="text-xl mb-4 text-white text-center">Your Interests:</p>
+              </label>
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
+                <input
+                  type="checkbox"
+                  id="learn"
+                  name="learn"
+                  value="Learn to Lift"
+                  className="mr-2"
+                />
+                <label htmlFor="learn">Learn to Lift</label>
+              </div>
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
+                <input
+                  type="checkbox"
+                  id="powerlifting"
+                  name="powerlifting"
+                  value="Compete in Powerlifting"
+                  className="mr-2"
+                />
+                <label htmlFor="powerlifting">Compete in Powerlifting</label>
+              </div>
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
+                <input
+                  type="checkbox"
+                  id="calisthenics"
+                  name="calisthenics"
+                  value="Work on Calisthenics Skills"
+                  className="mr-2"
+                />
+                <label htmlFor="calisthenics">Work on Calisthenics Skills</label>
+              </div>
+              <div className="flex items-center h-8 ml-10 sm:ml-40">
+                <input
+                  type="checkbox"
+                  id="handstands"
+                  name="handstands"
+                  value="Learn Handstands"
+                  className="mr-2"
+                />
+                <label htmlFor="handstands">Learn Handstands</label>
+              </div>
+            </div>
+          </div>
+
           <div>
             <label htmlFor="message">
               <p className="text-xl mb-4 text-white text-center">Message:</p>
             </label>
-            <textarea className="border h-64 w-full p-6"></textarea>
+            <textarea className="border h-64 w-full p-6 bg-white"></textarea>
           </div>
         </div>
 

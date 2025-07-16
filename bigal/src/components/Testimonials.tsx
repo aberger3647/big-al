@@ -1,6 +1,6 @@
-import { images } from "../assets/optimized_photos";
+import { images } from "@/assets/optimized_photos";
 import { Header } from "./Header";
-import { reviews } from "../assets/reviews.ts";
+import { reviews } from "@/assets/reviews";
 import { useState, useEffect } from "react";
 
 export const Testimonials = () => {
@@ -60,7 +60,7 @@ export const Testimonials = () => {
       <div className="flex flex-nowrap overflow-hidden m-8">
         <div
           className="flex transition-transform duration-1000 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 576}px` }}
+          style={{ transform: `translateX(-${currentIndex * 576}px)` }}
         >
           {reviews.map((review, index) => (
             <div

@@ -19,20 +19,25 @@ export const Testimonials = () => {
         title="Testimonials"
       />
 
-      <Carousel>
-        <CarouselContent>
-          {reviews.map((review, index) => (
-            <CarouselItem>
-              <div key={index}>
-                <p>{review.review}</p>
-                <p>{review.name}</p>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <div className="w-full overflow-hidden p-12">
+        <Carousel className="w-full max-w-4xl mx-auto">
+          <CarouselContent>
+            {reviews.map((review, index) => (
+              <CarouselItem
+                key={index}
+                className="flex items-center justify-center"
+              >
+                <div>
+                  <p>{review.review}</p>
+                  <p className="text-xl text-right text-teal-500">{review.name}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </main>
   );
 };

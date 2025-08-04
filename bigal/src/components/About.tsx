@@ -3,7 +3,7 @@ import { images } from "../assets/optimized_photos";;
 
 export const About = () => {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center pb-4">
           <Header
          src1600={images.headshot_1600}
         src1200={images.headshot_1200}

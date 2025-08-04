@@ -6,11 +6,11 @@ export const Home = () => {
   return (
     <main className="flex flex-col">
 
-      <div className="flex flex-col justify-center items-center">
         <h1 className="text-3xl md:text-6xl text-center m-4 mb-6">
           Big Al Strength & Conditioning
         </h1>
-        <div className="md:h-96">
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <div>
           <Image
             src1600={images.headshot2_1000}
             src1200={images.headshot2_1000}
@@ -19,7 +19,6 @@ export const Home = () => {
             alt="Headshot of Alex"
           />
         </div>
-      </div>
 
       <div className="m-4 gap-4 flex flex-col items-center">
         <p>
@@ -30,9 +29,10 @@ export const Home = () => {
           are you looking for a way to make working out a part of your
           lifestyle?
         </p>
+      <Button />
       </div>
 
-      <Button />
+      </div>
 
     </main>
   );

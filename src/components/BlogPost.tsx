@@ -5,6 +5,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../sanity/client";
+import { PortableTextComponents } from '@portabletext/react'
 
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
@@ -52,6 +53,13 @@ export const BlogPost = () => {
     ? urlFor(post.image)?.width(550).height(310).url()
     : null;
 
+const components: PortableTextComponents = {
+  block: {
+    h2: ({children}) => <h2>{children}</h2>,
+    normal: ({children}) => <p>{children}</p>,
+  },
+}
+
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
       <Link to="/blog" className="hover:underline">
@@ -61,16 +69,21 @@ export const BlogPost = () => {
         <img
           src={postImageUrl}
           alt={post.title}
-          className="aspect-video rounded-xl"
+          className="aspect-video border"
           width="550"
           height="310"
         />
       )}
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-      <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-        {Array.isArray(post.body) && <PortableText value={post.body} />}
-      </div>
+    <div className="prose prose-lg max-w-none">
+  <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+  {Array.isArray(post.body) && (
+    <PortableText 
+      value={post.body} 
+      components={components}
+    />
+  )}
+</div>
     </main>
   );
 };

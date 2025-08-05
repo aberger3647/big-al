@@ -38,14 +38,14 @@ export const Blog = () => {
   }
 
   return (
-    <main>
+    <main className="flex flex-col items-center pb-4">
       <Header
         src1600={images.masonsquat_1600}
         src1200={images.masonsquat_1200}
         src768={images.masonsquat_768}
         title="Blog"
       />
-      <h1 className="text-4xl font-bold mb-8">Posts</h1>
+
       <ul className="flex flex-col gap-y-4">
         {posts.map((post) => (
           <li className="hover:underline" key={post._id}>

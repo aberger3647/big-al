@@ -46,7 +46,7 @@ export const Blog = () => {
         title="Blog"
       />
 
-      <ul className="flex flex-col gap-y-4">
+      <ul className="flex flex-col gap-y-4 m-6">
         {posts.map((post) => (
           <li className="hover:underline" key={post._id}>
             <Link to={`/blog/${post.slug.current}`}>

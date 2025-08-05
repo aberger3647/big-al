@@ -8,9 +8,9 @@ import {
   Nav,
   Home,
   About,
-  Services,
-  Rates,
+  Services, 
   Blog,
+  BlogPost,
   Testimonials,
   Contact,
   Footer,
@@ -50,8 +50,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            {/* <Route path="/rates" element={<Rates />} /> */}
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/footer" element={<Footer />} />

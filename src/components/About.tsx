@@ -1,5 +1,6 @@
 import { Header } from "./Header"
-import { images } from "../assets/optimized_photos";;
+import { images } from "../assets/optimized_photos";
+import { Button } from "./Button";
 
 export const About = () => {
   return (
@@ -34,6 +35,9 @@ export const About = () => {
         at 727-504-4123 or email me at info@bigalstrength.com to set up a free
         consultation.
       </p>
+           <div className="self-center">
+          <Button />
+        </div>
     </main>
   );
 };

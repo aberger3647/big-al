@@ -1,6 +1,6 @@
 export const InquiryForm = () => {
   return (
-    <form className="p-6 border bg-[#ff4a26] w-xl m-4">
+    <form className="p-6 border bg-[#ff4a26] m-4 md:max-w-3xl w-full">
       <div className="flex flex-col mx-auto">
         <div className="flex gap-8 flex-col">
           <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
@@ -13,7 +13,7 @@ export const InquiryForm = () => {
                 type="text"
                 id="fname"
                 name="fname"
-                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
+                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
@@ -24,7 +24,7 @@ export const InquiryForm = () => {
                 type="text"
                 id="lname"
                 name="lname"
-                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
+                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
@@ -35,7 +35,7 @@ export const InquiryForm = () => {
                 type="text"
                 id="email"
                 name="email"
-                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
+                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
             <div className="flex items-center">
@@ -46,7 +46,7 @@ export const InquiryForm = () => {
                 type="text"
                 id="phone"
                 name="phone"
-                className="border border-solid border-[#bd2000] bg-white outline-none px-2 py-1 w-48 flex-1"
+                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
               />
             </div>
           </div>
@@ -56,6 +56,7 @@ export const InquiryForm = () => {
               <label htmlFor="goals" className="mb-2">
                 <p className="text-xl mb-4 text-white text-center">Your Goals:</p>
               </label>
+              
               <div className="flex items-center h-8 ml-10 sm:ml-40">
                 <input
                   type="checkbox"
@@ -168,7 +169,7 @@ export const InquiryForm = () => {
         <div className="flex justify-center mt-6">
           <button
             type="submit"
-            className="border solid 1 py-2 px-4 rounded-md bg-yellow-500 hover:bg-yellow-600"
+            className="border solid 1 py-2 px-4 rounded-md bg-yellow-400 hover:bg-yellow-500"
           >
             Submit Inquiry
           </button>

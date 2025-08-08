@@ -21,12 +21,12 @@ export const Home = () => {
         </div>
 
       <div className="m-4 gap-4 flex flex-col items-center">
-        <p>
-          are you ready to take your fitness to the next level with in-person
+        <p className="text-2xl text-center">
+          Are you ready to take your fitness to the next level with in-person
           guidance?
         </p>
-        <p>
-          are you looking for a way to make working out a part of your
+        <p className="text-2xl text-center">
+          Are you looking for a way to make working out a part of your
           lifestyle?
         </p>
       <Button />

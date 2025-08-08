@@ -36,8 +36,13 @@ export const InquiryForm = () => {
     register, 
     handleSubmit, 
     formState: { errors, isSubmitting },
-    reset 
+    reset,
+    watch 
   } = useForm<FormData>();
+
+  // Watch the checkbox groups to validate them
+  const watchedGoals = watch("goals");
+  const watchedInterests = watch("interests");
 
   const [submitStatus, setSubmitStatus] = useState<'submitting' | 'success' | 'error' | ''>('');
 
@@ -108,17 +113,6 @@ export const InquiryForm = () => {
 
   return (
     <>
-      {/* Hidden form for Netlify detection - add this to your public/index.html instead */}
-      <form name="inquiry" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="fname" />
-        <input type="text" name="lname" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <input type="text" name="goals" />
-        <input type="text" name="interests" />
-        <textarea name="message"></textarea>
-      </form>
-
       <form 
         className="p-6 border bg-[#ff4a26] m-4 md:max-w-3xl w-full"
         onSubmit={handleSubmit(onSubmit)}
@@ -133,7 +127,7 @@ export const InquiryForm = () => {
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                Thank you! Your inquiry has been submitted successfully.
+                Your inquiry has been submitted successfully. I'll be in touch soon!
               </div>
             )}
             {submitStatus === 'error' && (
@@ -258,7 +252,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="stronger"
-                    {...register("goals.stronger")}
+                    {...register("goals.stronger", {
+                      validate: {
+                        atLeastOne: () => {
+                          const goals = watchedGoals;
+                          return goals && Object.values(goals).some(value => value === true) || "Please select at least one goal";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="stronger" className="text-white">Get Stronger</label>
@@ -267,7 +268,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="health"
-                    {...register("goals.health")}
+                    {...register("goals.health", {
+                      validate: {
+                        atLeastOne: () => {
+                          const goals = watchedGoals;
+                          return goals && Object.values(goals).some(value => value === true) || "Please select at least one goal";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="health" className="text-white">Health & Longevity</label>
@@ -276,7 +284,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="muscle"
-                    {...register("goals.muscle")}
+                    {...register("goals.muscle", {
+                      validate: {
+                        atLeastOne: () => {
+                          const goals = watchedGoals;
+                          return goals && Object.values(goals).some(value => value === true) || "Please select at least one goal";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="muscle" className="text-white">Build Muscle</label>
@@ -285,7 +300,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="performance"
-                    {...register("goals.performance")}
+                    {...register("goals.performance", {
+                      validate: {
+                        atLeastOne: () => {
+                          const goals = watchedGoals;
+                          return goals && Object.values(goals).some(value => value === true) || "Please select at least one goal";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="performance" className="text-white">Athletic Performance</label>
@@ -294,11 +316,27 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="weight"
-                    {...register("goals.weight")}
+                    {...register("goals.weight", {
+                      validate: {
+                        atLeastOne: () => {
+                          const goals = watchedGoals;
+                          return goals && Object.values(goals).some(value => value === true) || "Please select at least one goal";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="weight" className="text-white">Lose Weight</label>
                 </div>
+                {errors.goals && (
+                  <p className="text-red-200 text-xs mt-2 text-center">
+                    {errors.goals.stronger?.message || 
+                     errors.goals.health?.message || 
+                     errors.goals.muscle?.message || 
+                     errors.goals.performance?.message || 
+                     errors.goals.weight?.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -312,7 +350,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="learn"
-                    {...register("interests.learn")}
+                    {...register("interests.learn", {
+                      validate: {
+                        atLeastOne: () => {
+                          const interests = watchedInterests;
+                          return interests && Object.values(interests).some(value => value === true) || "Please select at least one interest";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="learn" className="text-white">Learn to Lift</label>
@@ -321,7 +366,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="powerlifting"
-                    {...register("interests.powerlifting")}
+                    {...register("interests.powerlifting", {
+                      validate: {
+                        atLeastOne: () => {
+                          const interests = watchedInterests;
+                          return interests && Object.values(interests).some(value => value === true) || "Please select at least one interest";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="powerlifting" className="text-white">Compete in Powerlifting</label>
@@ -330,7 +382,14 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="calisthenics"
-                    {...register("interests.calisthenics")}
+                    {...register("interests.calisthenics", {
+                      validate: {
+                        atLeastOne: () => {
+                          const interests = watchedInterests;
+                          return interests && Object.values(interests).some(value => value === true) || "Please select at least one interest";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="calisthenics" className="text-white">Work on Calisthenics Skills</label>
@@ -339,11 +398,26 @@ export const InquiryForm = () => {
                   <input
                     type="checkbox"
                     id="handstands"
-                    {...register("interests.handstands")}
+                    {...register("interests.handstands", {
+                      validate: {
+                        atLeastOne: () => {
+                          const interests = watchedInterests;
+                          return interests && Object.values(interests).some(value => value === true) || "Please select at least one interest";
+                        }
+                      }
+                    })}
                     className="mr-2"
                   />
                   <label htmlFor="handstands" className="text-white">Learn Handstands</label>
                 </div>
+                {errors.interests && (
+                  <p className="text-red-200 text-xs mt-2 text-center">
+                    {errors.interests.learn?.message || 
+                     errors.interests.powerlifting?.message || 
+                     errors.interests.calisthenics?.message || 
+                     errors.interests.handstands?.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -365,7 +439,7 @@ export const InquiryForm = () => {
                   className={`border h-64 w-full p-6 bg-white ${
                     errors.message ? 'border-red-500' : ''
                   }`}
-                  placeholder="Tell us about yourself and your fitness goals..."
+                  placeholder="Tell me about yourself and your fitness goals..."
                 />
                 {errors.message && (
                   <p className="text-red-200 text-xs mt-1">{errors.message.message}</p>

@@ -1,181 +1,391 @@
+import { useForm, FieldError } from 'react-hook-form';
+import { useState } from 'react';
+
+// TypeScript interfaces
+interface FormData {
+  fname: string;
+  lname: string;
+  email: string;
+  phone?: string;
+  goals?: {
+    stronger?: boolean;
+    health?: boolean;
+    muscle?: boolean;
+    performance?: boolean;
+    weight?: boolean;
+  };
+  interests?: {
+    learn?: boolean;
+    powerlifting?: boolean;
+    calisthenics?: boolean;
+    handstands?: boolean;
+  };
+  message: string;
+}
+
+// Extend form attributes for Netlify
+declare module 'react' {
+  interface FormHTMLAttributes<T> {
+    netlify?: boolean;
+    'netlify-honeypot'?: string;
+  }
+}
+
 export const InquiryForm = () => {
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors, isSubmitting },
+    reset 
+  } = useForm<FormData>();
+
+  const [submitStatus, setSubmitStatus] = useState<'submitting' | 'success' | 'error' | ''>('');
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      setSubmitStatus('submitting');
+      
+      // Convert checkbox arrays to comma-separated strings with proper type handling
+      const goals = data.goals ? 
+        Object.entries(data.goals)
+          .filter(([_, value]) => value === true)
+          .map(([key, _]) => {
+            switch (key) {
+              case 'stronger': return 'Get Stronger';
+              case 'health': return 'Health & Longevity';
+              case 'muscle': return 'Build Muscle';
+              case 'performance': return 'Athletic Performance';
+              case 'weight': return 'Lose Weight';
+              default: return key;
+            }
+          })
+          .join(', ') : '';
+
+      const interests = data.interests ? 
+        Object.entries(data.interests)
+          .filter(([_, value]) => value === true)
+          .map(([key, _]) => {
+            switch (key) {
+              case 'learn': return 'Learn to Lift';
+              case 'powerlifting': return 'Compete in Powerlifting';
+              case 'calisthenics': return 'Work on Calisthenics Skills';
+              case 'handstands': return 'Learn Handstands';
+              default: return key;
+            }
+          })
+          .join(', ') : '';
+      
+      const formData: Record<string, string> = {
+        'form-name': 'inquiry',
+        fname: data.fname,
+        lname: data.lname,
+        email: data.email,
+        phone: data.phone || '',
+        goals: goals,
+        interests: interests,
+        message: data.message
+      };
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        reset();
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus(''), 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Form submission error:', error);
+    }
+  };
+
   return (
-    <form className="p-6 border bg-[#ff4a26] m-4 md:max-w-3xl w-full">
-      <div className="flex flex-col mx-auto">
-        <div className="flex gap-8 flex-col">
-          <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center">
-              <label htmlFor="fname" className="w-32 text-left text-sm">
-                First Name:
-              </label>
-              <input
-                type="text"
-                id="fname"
-                name="fname"
-                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
-              />
-            </div>
-            <div className="flex items-center">
-              <label htmlFor="lname" className="w-32 text-left text-sm">
-                Last Name:
-              </label>
-              <input
-                type="text"
-                id="lname"
-                name="lname"
-                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
-              />
-            </div>
-            <div className="flex items-center">
-              <label htmlFor="email" className="w-32 text-left text-sm">
-                Email Address:
-              </label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
-              />
-            </div>
-            <div className="flex items-center">
-              <label htmlFor="phone" className="w-32 text-left text-sm ">
-                Phone Number:
-              </label>
-              <input
-                type="text"
-                id="phone"
-                name="phone"
-                className="border border-solid bg-white outline-none px-2 py-1 w-48 flex-1"
-              />
-            </div>
-          </div>
+    <>
+      {/* Hidden form for Netlify detection - add this to your public/index.html instead */}
+      <form name="inquiry" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="fname" />
+        <input type="text" name="lname" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="goals" />
+        <input type="text" name="interests" />
+        <textarea name="message"></textarea>
+      </form>
 
-          <div className="flex flex-col">
+      <form 
+        className="p-6 border bg-[#ff4a26] m-4 md:max-w-3xl w-full"
+        onSubmit={handleSubmit(onSubmit)}
+        name="inquiry"
+        method="POST"
+        data-netlify="true"
+      >
+        <div className="flex flex-col mx-auto">
+          <div className="flex gap-8 flex-col">
+            <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
+            
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                Thank you! Your inquiry has been submitted successfully.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                There was an error submitting your form. Please try again.
+              </div>
+            )}
+
+            <div className="flex flex-col gap-4">
+              {/* First Name */}
+              <div className="flex items-center">
+                <label htmlFor="fname" className="w-32 text-left text-sm text-white">
+                  First Name:
+                </label>
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    id="fname"
+                    {...register("fname", { 
+                      required: "First name is required",
+                      minLength: {
+                        value: 2,
+                        message: "First name must be at least 2 characters"
+                      }
+                    })}
+                    className={`border border-solid bg-white outline-none px-2 py-1 w-48 flex-1 ${
+                      errors.fname ? 'border-red-500' : ''
+                    }`}
+                  />
+                  {errors.fname && (
+                    <p className="text-red-200 text-xs mt-1">{errors.fname.message}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Last Name */}
+              <div className="flex items-center">
+                <label htmlFor="lname" className="w-32 text-left text-sm text-white">
+                  Last Name:
+                </label>
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    id="lname"
+                    {...register("lname", { 
+                      required: "Last name is required",
+                      minLength: {
+                        value: 2,
+                        message: "Last name must be at least 2 characters"
+                      }
+                    })}
+                    className={`border border-solid bg-white outline-none px-2 py-1 w-48 flex-1 ${
+                      errors.lname ? 'border-red-500' : ''
+                    }`}
+                  />
+                  {errors.lname && (
+                    <p className="text-red-200 text-xs mt-1">{errors.lname.message}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center">
+                <label htmlFor="email" className="w-32 text-left text-sm text-white">
+                  Email Address:
+                </label>
+                <div className="flex-1">
+                  <input
+                    type="email"
+                    id="email"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /\S+@\S+\.\S+/,
+                        message: "Please enter a valid email address"
+                      }
+                    })}
+                    className={`border border-solid bg-white outline-none px-2 py-1 w-48 flex-1 ${
+                      errors.email ? 'border-red-500' : ''
+                    }`}
+                  />
+                  {errors.email && (
+                    <p className="text-red-200 text-xs mt-1">{errors.email.message}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center">
+                <label htmlFor="phone" className="w-32 text-left text-sm text-white">
+                  Phone Number:
+                </label>
+                <div className="flex-1">
+                  <input
+                    type="tel"
+                    id="phone"
+                    {...register("phone", { 
+                      pattern: {
+                        value: /^[\+]?[1-9][\d]{0,15}$/,
+                        message: "Please enter a valid phone number"
+                      }
+                    })}
+                    className={`border border-solid bg-white outline-none px-2 py-1 w-48 flex-1 ${
+                      errors.phone ? 'border-red-500' : ''
+                    }`}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-200 text-xs mt-1">{errors.phone.message}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Goals Section */}
+            <div className="flex flex-col">
+              <div>
+                <label className="mb-2">
+                  <p className="text-xl mb-4 text-white text-center">Your Goals:</p>
+                </label>
+                
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="stronger"
+                    {...register("goals.stronger")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="stronger" className="text-white">Get Stronger</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="health"
+                    {...register("goals.health")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="health" className="text-white">Health & Longevity</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="muscle"
+                    {...register("goals.muscle")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="muscle" className="text-white">Build Muscle</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="performance"
+                    {...register("goals.performance")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="performance" className="text-white">Athletic Performance</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="weight"
+                    {...register("goals.weight")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="weight" className="text-white">Lose Weight</label>
+                </div>
+              </div>
+            </div>
+
+            {/* Interests Section */}
+            <div className="flex flex-col">
+              <div>
+                <label className="mb-2">
+                  <p className="text-xl mb-4 text-white text-center">Your Interests:</p>
+                </label>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="learn"
+                    {...register("interests.learn")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="learn" className="text-white">Learn to Lift</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="powerlifting"
+                    {...register("interests.powerlifting")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="powerlifting" className="text-white">Compete in Powerlifting</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="calisthenics"
+                    {...register("interests.calisthenics")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="calisthenics" className="text-white">Work on Calisthenics Skills</label>
+                </div>
+                <div className="flex items-center h-8 ml-10 sm:ml-40">
+                  <input
+                    type="checkbox"
+                    id="handstands"
+                    {...register("interests.handstands")}
+                    className="mr-2"
+                  />
+                  <label htmlFor="handstands" className="text-white">Learn Handstands</label>
+                </div>
+              </div>
+            </div>
+
+            {/* Message */}
             <div>
-              <label htmlFor="goals" className="mb-2">
-                <p className="text-xl mb-4 text-white text-center">Your Goals:</p>
+              <label htmlFor="message">
+                <p className="text-xl mb-4 text-white text-center">Message:</p>
               </label>
-              
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="stronger"
-                  name="stronger"
-                  value="Get stronger"
-                  className="mr-2"
+              <div>
+                <textarea 
+                  id="message"
+                  {...register("message", { 
+                    required: "Please include a message",
+                    minLength: {
+                      value: 10,
+                      message: "Message must be at least 10 characters"
+                    }
+                  })}
+                  className={`border h-64 w-full p-6 bg-white ${
+                    errors.message ? 'border-red-500' : ''
+                  }`}
+                  placeholder="Tell us about yourself and your fitness goals..."
                 />
-                <label htmlFor="stronger">Get Stronger</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="health"
-                  name="health"
-                  value="Health & longevity"
-                  className="mr-2"
-                />
-                <label htmlFor="health">Health & Longevity</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="muscle"
-                  name="muscle"
-                  value="Build muscle"
-                  className="mr-2"
-                />
-                <label htmlFor="muscle">Build Muscle</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="performance"
-                  name="performance"
-                  value="Athletic performance"
-                  className="mr-2"
-                />
-                <label htmlFor="performance">Athletic Performance</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="weight"
-                  name="weight"
-                  value="Lose weight"
-                  className="mr-2"
-                />
-                <label htmlFor="weight">Lose Weight</label>
+                {errors.message && (
+                  <p className="text-red-200 text-xs mt-1">{errors.message.message}</p>
+                )}
               </div>
             </div>
           </div>
 
-                    <div className="flex flex-col">
-            <div>
-              <label htmlFor="interests" className="mb-2">
-                <p className="text-xl mb-4 text-white text-center">Your Interests:</p>
-              </label>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="learn"
-                  name="learn"
-                  value="Learn to Lift"
-                  className="mr-2"
-                />
-                <label htmlFor="learn">Learn to Lift</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="powerlifting"
-                  name="powerlifting"
-                  value="Compete in Powerlifting"
-                  className="mr-2"
-                />
-                <label htmlFor="powerlifting">Compete in Powerlifting</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="calisthenics"
-                  name="calisthenics"
-                  value="Work on Calisthenics Skills"
-                  className="mr-2"
-                />
-                <label htmlFor="calisthenics">Work on Calisthenics Skills</label>
-              </div>
-              <div className="flex items-center h-8 ml-10 sm:ml-40">
-                <input
-                  type="checkbox"
-                  id="handstands"
-                  name="handstands"
-                  value="Learn Handstands"
-                  className="mr-2"
-                />
-                <label htmlFor="handstands">Learn Handstands</label>
-              </div>
-            </div>
+          <div className="flex justify-center mt-6">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="border solid 1 py-2 px-4 rounded-md bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
+            </button>
           </div>
 
-          <div>
-            <label htmlFor="message">
-              <p className="text-xl mb-4 text-white text-center">Message:</p>
-            </label>
-            <textarea className="border h-64 w-full p-6 bg-white"></textarea>
-          </div>
         </div>
-
-        <div className="flex justify-center mt-6">
-          <button
-            type="submit"
-            className="border solid 1 py-2 px-4 rounded-md bg-yellow-400 hover:bg-yellow-500"
-          >
-            Submit Inquiry
-          </button>
-        </div>
-
-      </div>
-    </form>
+      </form>
+    </>
   );
 };

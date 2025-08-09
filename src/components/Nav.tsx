@@ -37,15 +37,6 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           Services
         </NavLink>
       </li>
-      {/* <li className={`${isMobile ? "w-full border-b py-3" : ""}`}>
-        <NavLink
-          to="/rates"
-          className={`${isMobile ? "block text-center" : ""}`}
-          onClick={toggleNavbar}
-        >
-          Rates
-        </NavLink>
-      </li> */}
       <li className={`${isMobile ? "w-full border-b bg-yellow-400 py-3" : ""}`}>
         <NavLink
           to="/blog"
@@ -101,7 +92,7 @@ export const Nav = () => {
     <>
       <nav className="sticky top-0 z-[20] mx-auto flex h-16 items-center justify-between p-4 border border-b-1 bg-yellow-400">
         <NavLink to="/">
-          <h1 className="flex">Female Personal Trainer</h1>
+          <h1 className="flex">Big Al Strength & Conditioning</h1>
         </NavLink>
 
         <ul className="hidden md:flex gap-4">

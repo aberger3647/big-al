@@ -66,7 +66,7 @@ export const Services = () => {
               </div>
             </div>
 
-            <div className="border p-6 md:p-8 bg-[#ff4a26] flex-1 flex flex-col">
+            <div className="border p-6 md:p-8 bg-[#ff6748] flex-1 flex flex-col">
               <h2 className="text-2xl mb-4 text-center text-white">
                 Online Training{" "}
               </h2>

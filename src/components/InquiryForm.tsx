@@ -129,7 +129,7 @@ export const InquiryForm = () => {
   return (
     <>
       <form
-        className="p-6 border bg-[#ff4a26] m-4 md:max-w-3xl w-full"
+        className="p-6 border bg-[#ff6748] m-4 md:max-w-3xl w-full"
         onSubmit={handleSubmit(onSubmit)}
         name="inquiry"
         method="POST"

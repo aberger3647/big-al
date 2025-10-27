@@ -1,12 +1,45 @@
-# React + Vite
+# 💪 Big Al Strength & Conditioning
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Business website for my online personal training and coaching services.**
 
-Currently, two official plugins are available:
+🔗 **Live site:** [**bigalstrength.com**](https://bigalstrength.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🏋️ Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Big Al Strength & Conditioning** is a professional website that showcases online fitness coaching services, client testimonials, blog content, and a built-in contact form for easy inquiries.
+
+The goal is to provide potential clients with an inside look at training philosophy, success stories, and actionable content.
+
+---
+
+## 👥 Who It’s For
+
+This website is designed for:
+- Individuals seeking **personalized online training**  
+- People who want **expert guidance** to get stronger, fitter, and healthier  
+- Anyone interested in learning more about **strength and conditioning** 🏃‍♂️  
+
+---
+
+## 💻 Tech Stack
+
+- ⚛️ **React + Vite + TypeScript** — for a fast, modern, and efficient build  
+- 🎨 **Tailwind CSS** — for responsive and clean design  
+- 📝 **Sanity Studio** — for dynamic blog content management  
+
+---
+
+## 🌎 How It Works
+
+1. Visit **[bigalstrength.com](https://bigalstrength.com)**  
+2. Explore available **services** and **client testimonials**  
+3. Browse **blog posts** powered by **Sanity Studio**  
+4. Use the **contact form** to get in touch about coaching opportunities  
+
+---
+
+## 🪄 License
+
+This project is licensed under the **MIT License**.

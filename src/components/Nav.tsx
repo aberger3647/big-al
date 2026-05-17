@@ -91,8 +91,12 @@ export const Nav = () => {
   return (
     <>
       <nav className="sticky top-0 z-[20] mx-auto flex h-16 items-center justify-between p-4 border border-b-1 bg-yellow-400">
-        <NavLink to="/">
-          <h1 className="flex">Big Al Strength & Conditioning</h1>
+        <NavLink to="/" className="inline-flex items-center gap-[10px]" aria-label="Big Al Strength & Conditioning, Home">
+          <svg width="36" height="36" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <circle cx="50" cy="50" r="50" fill="#000" />
+            <text x="50" y="50" textAnchor="middle" dominantBaseline="central" fill="#fff" fontFamily="Anton, Impact, sans-serif" fontSize="78">BA</text>
+          </svg>
+          <span className="ba-wordmark-nav">Big Al Strength &amp; Conditioning</span>
         </NavLink>
 
         <ul className="hidden md:flex gap-4">

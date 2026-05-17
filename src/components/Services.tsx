@@ -17,7 +17,7 @@ export const Services = () => {
         <div className="flex flex-col gap-6 m-4">
           <div className="flex flex-col md:flex-row gap-4 justify-around md:items-stretch">
             <div className="border p-6 md:p-8 bg-[#40bdf7] flex-1 flex flex-col">
-              <h2 className="text-2xl mb-4 text-center text-white">
+              <h2 className="ba-h2-card mb-4 text-white">
                 1-on-1 Personal Training
               </h2>
               <ul className="text-center flex-grow">
@@ -67,7 +67,7 @@ export const Services = () => {
             </div>
 
             <div className="border p-6 md:p-8 bg-[#ff6748] flex-1 flex flex-col">
-              <h2 className="text-2xl mb-4 text-center text-white">
+              <h2 className="ba-h2-card mb-4 text-white">
                 Online Training{" "}
               </h2>
               <ul className="flex flex-col text-center flex-grow">
@@ -117,12 +117,12 @@ export const Services = () => {
         </div>
 
         <div className="flex flex-col gap-6 m-4 max-w-4xl">
-          <h1 className="text-2xl md:text-5xl text-center mb-6">
+          <h1 className="ba-h1-section">
             Training Offerings
           </h1>
           <div className="flex flex-col max-w-2xl gap-4 mb-12 mx-auto">
             <div>
-              <h2 className="text-2xl mb-2">Handstands</h2>
+              <h2 className="text-xl font-bold mb-2">Handstands</h2>
               <p>
                 Learn the skills you need to do your first handstand. Everything
                 from the proper core warmup, wrist and shoulder warmup, to getting
@@ -132,7 +132,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Pull Ups and Muscle Ups</h2>
+              <h2 className="text-xl font-bold mb-2">Pull Ups and Muscle Ups</h2>
               <p>
                 Achieve your first pullup or first muscle up. Get guidance on
                 proper technique and workout volume for optimal skill acquisition.
@@ -142,7 +142,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Dips</h2>
+              <h2 className="text-xl font-bold mb-2">Dips</h2>
               <p>
                 Work on dips and dip progressions, building up to weighted dips.
                 Dips are a great exercise for developing chest, anterior shoulder,
@@ -151,7 +151,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Dragon Flags and Human Flags</h2>
+              <h2 className="text-xl font-bold mb-2">Dragon Flags and Human Flags</h2>
               <p>
                 Learn the coolest ab exercises for a bulletproof core, popularized
                 by martial artist Bruce Lee.
@@ -159,7 +159,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Pistol Squats</h2>
+              <h2 className="text-xl font-bold mb-2">Pistol Squats</h2>
               <p>
                 Develop impressive single leg strength, useful for movements in
                 daily life such as walking up stairs and functional for sport like
@@ -168,7 +168,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Powerlifting</h2>
+              <h2 className="text-xl font-bold mb-2">Powerlifting</h2>
               <p>
                 Get a full program that includes instruction for the best way to
                 learn and grow your squat, bench press, and deadlift, with
@@ -178,7 +178,7 @@ export const Services = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl mb-2">Nutrition Guidance</h2>
+              <h2 className="text-xl font-bold mb-2">Nutrition Guidance</h2>
               <p>
                 Get guidance on protein and calorie intake and advice on how to
                 reach those goals. Includes weekly check-ins and discussions about

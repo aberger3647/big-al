@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="flex md:flex-row flex-col items-start md:w-full md:justify-around">
         
         <div className="m-4">
-          <h3 className="text-md font-semibold mb-3">Contact</h3>
+          <h3 className="text-sm font-bold uppercase tracking-[0.06em] mb-3">Contact</h3>
           <div className="flex flex-col gap-4">
             <p>Alex Berger</p>
             <p>info@bigalstrength.com</p>
@@ -17,7 +17,7 @@ export const Footer = () => {
         </div>
 
         <div className="m-4">
-          <h3 className="text-md font-semibold mb-3">In-Person Training Hours</h3>
+          <h3 className="text-sm font-bold uppercase tracking-[0.06em] mb-3">In-Person Training Hours</h3>
           <div className="flex">
             <div className="flex flex-col gap-2">
               <span className="font-medium ">Saturday</span>
@@ -32,7 +32,7 @@ export const Footer = () => {
         </div>
 
           <div className="m-4">
-          <h3 className="text-md font-semibold mb-3">Location</h3>
+          <h3 className="text-sm font-bold uppercase tracking-[0.06em] mb-3">Location</h3>
           <div className="flex">
             <div className="flex flex-col gap-2 mb-3">
               <p>Brownie Neighborhood Park</p>

@@ -74,7 +74,7 @@ export const BlogPost = () => {
           height="3npm run10"
         />
       )}
-      <h1 className="text-5xl font-bold mb-2">{post.title}</h1>
+      <h1 className="ba-h1 !text-left !mx-0 !my-2">{post.title}</h1>
       <div className="prose prose-lg max-w-none">
         <p className="text-sm">Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
         {Array.isArray(post.body) && (

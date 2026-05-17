@@ -1,0 +1,90 @@
+/* =====================================================================
+ * Big Al Strength & Conditioning — Brand foundations
+ * Anton (display) + Archivo (body), brand colors, semantic helpers.
+ * Loaded by src/index.css.
+ * ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&display=swap');
+
+:root {
+  /* Brand colors (raw) */
+  --ba-yellow:        #facc15;
+  --ba-yellow-hover:  #eab308;
+  --ba-teal:          #14b8a6;
+  --ba-blue:          #40bdf7;
+  --ba-blue-dark:     #009be3;
+  --ba-orange:        #ff6748;
+  --ba-orange-dark:   #bd2000;
+
+  /* Neutrals */
+  --ba-black:         #000000;
+  --ba-white:         #ffffff;
+
+  /* Type stacks */
+  --ba-font-display: 'Anton', 'Impact', 'Oswald', 'Arial Narrow', sans-serif;
+  --ba-font-sans:    'Archivo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base body uses Archivo */
+html, body {
+  font-family: var(--ba-font-sans);
+}
+
+/* ---------- Display type — Anton, uppercase, tight leading ---------- */
+.ba-display,
+.ba-h1,
+.ba-h1-section,
+.ba-h2-card,
+.ba-form-title {
+  font-family: var(--ba-font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: 0.005em;
+}
+
+/* Page-title H1 — Anton, centered, scales up at md */
+.ba-h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 16px 16px 24px;
+}
+@media (min-width: 768px) {
+  .ba-h1 { font-size: 80px; }
+}
+
+/* Section H1 (e.g. "Training Offerings") */
+.ba-h1-section {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .ba-h1-section { font-size: 56px; }
+}
+
+/* Service card H2 */
+.ba-h2-card {
+  font-size: 32px;
+  line-height: 0.95;
+  text-align: center;
+}
+
+/* Inquiry form title */
+.ba-form-title {
+  font-size: 32px;
+  line-height: 0.95;
+}
+
+/* ---------- Wordmark lockup (nav) ---------- */
+.ba-wordmark-nav {
+  font-family: var(--ba-font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-size: 14px;
+}
+@media (min-width: 640px) {
+  .ba-wordmark-nav { font-size: 22px; }
+}

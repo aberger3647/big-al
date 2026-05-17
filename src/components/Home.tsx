@@ -6,8 +6,8 @@ export const Home = () => {
   return (
     <main className="flex flex-col">
 
-        <h1 className="text-3xl md:text-6xl text-center m-4 mb-6">
-          Big Al Strength & Conditioning
+        <h1 className="ba-h1">
+          Big Al Strength &amp; Conditioning
         </h1>
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div>

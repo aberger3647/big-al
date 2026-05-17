@@ -50,7 +50,7 @@ export const Blog = () => {
         {posts.map((post) => (
           <li className="hover:underline" key={post._id}>
             <Link to={`/blog/${post.slug.current}`}>
-              <h2 className="text-xl font-semibold">{post.title}</h2>
+              <h2 className="font-display uppercase tracking-[0.005em] text-2xl leading-none">{post.title}</h2>
               <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
             </Link>
           </li>

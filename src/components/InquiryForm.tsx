@@ -137,7 +137,7 @@ export const InquiryForm = () => {
       >
         <div className="flex flex-col mx-auto">
           <div className="flex gap-8 flex-col">
-            <p className="text-2xl mb-4 text-white text-center">Inquiry Form</p>
+            <p className="ba-form-title mb-4 text-white text-center">Inquiry Form</p>
 
             <div className="flex flex-col gap-4">
               {/* First Name */}

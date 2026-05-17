@@ -14,7 +14,7 @@ export const Testimonials = () => {
 
     <div className='mx-auto max-w-5xl flex flex-col items-center my-2'>
  {reviews.map((review, index) => (
-   <div key={index} className={`max-w-2xl mx-4 my-2 p-6 bg-[#40bdf7] border ${
+   <div key={index} className={`max-w-2xl mx-4 my-2 p-6 bg-brand-blue border ${
      index % 2 === 0 ? 'self-start' : 'self-end'
    }`}>
      <p>{review.review}</p>

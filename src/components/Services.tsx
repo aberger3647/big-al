@@ -16,7 +16,7 @@ export const Services = () => {
       <div className="gap-4 flex flex-col items-center">
         <div className="flex flex-col gap-6 m-4">
           <div className="flex flex-col md:flex-row gap-4 justify-around md:items-stretch">
-            <div className="border p-6 md:p-8 bg-[#40bdf7] flex-1 flex flex-col">
+            <div className="border p-6 md:p-8 bg-brand-blue flex-1 flex flex-col">
               <h2 className="ba-h2-card mb-4 text-white">
                 1-on-1 Personal Training
               </h2>
@@ -26,30 +26,30 @@ export const Services = () => {
                   <span className="font-bold">hands-on guidance</span> in
                   calisthenics
                 </li>
-                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <hr className="mx-20 my-6 text-brand-blue-dark"></hr>
                 <li>
                   Learn to{" "}
                   <span className="font-bold">safely and effectively</span>{" "}
                   perform bodyweight exercises
                 </li>
-                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <hr className="mx-20 my-6 text-brand-blue-dark"></hr>
                 <li>
                   <span className="font-bold">Develop bodily control</span> with
                   calisthenics skills
                 </li>
-                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <hr className="mx-20 my-6 text-brand-blue-dark"></hr>
                 <li>
                   Gain awareness of and{" "}
                   <span className="font-bold">
                     improve dysfunctional movement patterns
                   </span>
                 </li>
-                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <hr className="mx-20 my-6 text-brand-blue-dark"></hr>
                 <li>
                   Learn progressions to{" "}
                   <span className="font-bold">achieve a handstand</span>
                 </li>
-                <hr className="mx-20 my-6 text-[#009be3]"></hr>
+                <hr className="mx-20 my-6 text-brand-blue-dark"></hr>
                 <li>
                   Train in the great outdoors at{" "}
                   <a
@@ -66,7 +66,7 @@ export const Services = () => {
               </div>
             </div>
 
-            <div className="border p-6 md:p-8 bg-[#ff6748] flex-1 flex flex-col">
+            <div className="border p-6 md:p-8 bg-brand-orange flex-1 flex flex-col">
               <h2 className="ba-h2-card mb-4 text-white">
                 Online Training{" "}
               </h2>
@@ -77,25 +77,25 @@ export const Services = () => {
                   personalized to your goals and level of experience with
                   progression built in
                 </li>
-                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <hr className="mx-20 my-6 text-brand-orange-dark"></hr>
                 <li className="max-w-md">
                   <span className="font-bold">Free workout app</span> includes
                   videos and instructions for each movement and stores a history
                   of your progress
                 </li>
-                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <hr className="mx-20 my-6 text-brand-orange-dark"></hr>
                 <li>
                   Save your lift videos in the app for{" "}
                   <span className="font-bold">technique review</span>
                 </li>
-                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <hr className="mx-20 my-6 text-brand-orange-dark"></hr>
                 <li className="max-w-md">
                   Weekly accountability with check-ins to{" "}
                   <span className="font-bold">
                     review workouts, recovery, and answer any questions
                   </span>
                 </li>
-                <hr className="mx-20 my-6 text-[#bd2000]"></hr>
+                <hr className="mx-20 my-6 text-brand-orange-dark"></hr>
                 <li>
                   <span className="font-bold">Unlimited text support</span> with
                   24 hr response time

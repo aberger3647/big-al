@@ -129,7 +129,7 @@ export const InquiryForm = () => {
   return (
     <>
       <form
-        className="p-6 border bg-[#ff6748] m-4 md:max-w-3xl w-full"
+        className="p-6 border bg-brand-orange m-4 md:max-w-3xl w-full"
         onSubmit={handleSubmit(onSubmit)}
         name="inquiry"
         method="POST"
@@ -553,7 +553,7 @@ export const InquiryForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="border solid 1 py-2 px-4 rounded-md bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border solid 1 py-2 px-4 rounded-md bg-brand-yellow hover:bg-brand-yellow-hover disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Submitting..." : "Submit Inquiry"}
             </button>
@@ -561,7 +561,7 @@ export const InquiryForm = () => {
 
             {/* Status Messages */}
             {submitStatus === "success" && (
-              <div className="bg-teal-200 border border-black text-teal-700 px-4 py-3">
+              <div className="bg-brand-teal-200 border border-black text-brand-teal-700 px-4 py-3">
                 Your inquiry has been submitted successfully. I'll be in touch
                 soon!
               </div>

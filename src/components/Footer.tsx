@@ -3,7 +3,7 @@ import { Button } from "./Button";
 export const Footer = () => {
   return (
     <>
-      <footer className="border 1 solid p-8 flex flex-col items-center md:flex-row w-full align-center bg-teal-500">
+      <footer className="border 1 solid p-8 flex flex-col items-center md:flex-row w-full align-center bg-brand-teal">
         
         <div className="flex md:flex-row flex-col items-start md:w-full md:justify-around">
         

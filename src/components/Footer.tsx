@@ -28,7 +28,7 @@ export const Footer = () => {
               <p >9am-5pm</p>
             </div>
           </div>
-          <p className="text-sm">Open for inquiries daily</p>
+          <p className="text-sm">Waitlist open &mdash; currently fully booked</p>
         </div>
 
           <div className="m-4">

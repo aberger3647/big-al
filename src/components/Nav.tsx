@@ -52,7 +52,7 @@ const NavLinks = ({ isMobile, toggleNavbar }: NavLinksProps) => {
           className={`${isMobile ? "block text-center" : ""}`}
           onClick={toggleNavbar}
         >
-          Contact
+          Waitlist
         </NavLink>
       </li>{" "}
       <li className={`${isMobile ? "w-full border-b bg-brand-yellow py-3" : ""}`}>

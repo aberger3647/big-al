@@ -2,6 +2,9 @@ import { images } from "../assets/optimized_photos";
 import { Image } from "./Image";
 import { InquiryForm } from "./InquiryForm";
 import { Header } from "./Header";
+import { reviews } from "@/assets/reviews";
+
+const featuredReviews = reviews.slice(0, 3);
 
 export const Contact = () => {
   return (
@@ -10,8 +13,30 @@ export const Contact = () => {
         src1600={images.nikkishoulderpress_1600}
         src1200={images.nikkishoulderpress_1200}
         src768={images.nikkishoulderpress_768}
-        title="Get in Touch"
+        title="Join the Waitlist"
       />
+
+      <div className="max-w-3xl mx-auto px-4 mt-8 text-center flex flex-col items-center gap-4">
+        <span className="inline-block bg-brand-blue text-white text-sm font-bold uppercase tracking-[0.08em] px-4 py-2">
+          Coaching is currently full
+        </span>
+        <p className="text-xl">
+          Spots are limited and open up rarely. Add your name to the waitlist
+          and I'll reach out the moment one frees up.
+        </p>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 mt-8 grid gap-4 md:grid-cols-3">
+        {featuredReviews.map((review, index) => (
+          <div key={index} className="bg-brand-blue border p-4 flex flex-col">
+            <p className="flex-grow">{review.review}</p>
+            <p className="text-right text-white pt-3 font-semibold">
+              {review.name}
+            </p>
+          </div>
+        ))}
+      </div>
+
 <div className="flex justify-center">
 
       <InquiryForm />

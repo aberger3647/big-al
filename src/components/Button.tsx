@@ -6,7 +6,7 @@ export const Button = () => {
         <Link to="/contact"
           className="border solid py-2 px-4 rounded-md text-center w-40 bg-brand-yellow hover:bg-brand-yellow-hover"
         >
-          Get Your Free Consultation
+          Join the Waitlist
         </Link>
       </div>
   );

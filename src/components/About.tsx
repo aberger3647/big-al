@@ -31,9 +31,10 @@ export const About = () => {
         through life with confidence and ease.
       </p>
       <p className="m-4 max-w-4xl">
-        Want to find out how I can help you achieve your goals? Call or text me
-        at 727-504-4123 or email me at info@bigalstrength.com to set up a free
-        consultation.
+        I'm currently fully booked, but new spots open up from time to time.
+        Want to train with me? Join the waitlist below, or call/text me at
+        727-504-4123 or email info@bigalstrength.com and I'll reach out as soon
+        as a spot opens.
       </p>
            <div className="self-center">
           <Button />

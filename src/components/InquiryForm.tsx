@@ -37,12 +37,7 @@ export const InquiryForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-    watch,
   } = useForm<FormData>();
-
-  // Watch the checkbox groups to validate them
-  const watchedGoals = watch("goals");
-  const watchedInterests = watch("interests");
 
   const [submitStatus, setSubmitStatus] = useState<
     "submitting" | "success" | "error" | ""
@@ -137,7 +132,7 @@ export const InquiryForm = () => {
       >
         <div className="flex flex-col mx-auto">
           <div className="flex gap-8 flex-col">
-            <p className="ba-form-title mb-4 text-white text-center">Inquiry Form</p>
+            <p className="ba-form-title mb-4 text-white text-center">Join the Waitlist</p>
 
             <div className="flex flex-col gap-4">
               {/* First Name */}
@@ -264,144 +259,74 @@ export const InquiryForm = () => {
               </div>
             </div>
 
+            {/* Goals & Interests, side by side on larger screens */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Goals Section */}
             <div className="flex flex-col">
               <div>
                 <label className="mb-2">
                   <p className="text-xl mb-4 text-white text-center">
-                    Your Goals:
+                    Your Goals (optional):
                   </p>
                 </label>
 
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="stronger"
-                    {...register("goals.stronger", {
-                      validate: {
-                        atLeastOne: () => {
-                          const goals = watchedGoals;
-                          return (
-                            (goals &&
-                              Object.values(goals).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one goal"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="stronger" className="text-white">
-                    Get Stronger
-                  </label>
+                <div className="flex flex-col gap-y-1 w-max mx-auto">
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="stronger"
+                      {...register("goals.stronger")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="stronger" className="text-white">
+                      Get Stronger
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="health"
+                      {...register("goals.health")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="health" className="text-white">
+                      Health & Longevity
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="muscle"
+                      {...register("goals.muscle")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="muscle" className="text-white">
+                      Build Muscle
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="performance"
+                      {...register("goals.performance")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="performance" className="text-white">
+                      Athletic Performance
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="weight"
+                      {...register("goals.weight")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="weight" className="text-white">
+                      Lose Weight
+                    </label>
+                  </div>
                 </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="health"
-                    {...register("goals.health", {
-                      validate: {
-                        atLeastOne: () => {
-                          const goals = watchedGoals;
-                          return (
-                            (goals &&
-                              Object.values(goals).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one goal"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="health" className="text-white">
-                    Health & Longevity
-                  </label>
-                </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="muscle"
-                    {...register("goals.muscle", {
-                      validate: {
-                        atLeastOne: () => {
-                          const goals = watchedGoals;
-                          return (
-                            (goals &&
-                              Object.values(goals).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one goal"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="muscle" className="text-white">
-                    Build Muscle
-                  </label>
-                </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="performance"
-                    {...register("goals.performance", {
-                      validate: {
-                        atLeastOne: () => {
-                          const goals = watchedGoals;
-                          return (
-                            (goals &&
-                              Object.values(goals).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one goal"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="performance" className="text-white">
-                    Athletic Performance
-                  </label>
-                </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="weight"
-                    {...register("goals.weight", {
-                      validate: {
-                        atLeastOne: () => {
-                          const goals = watchedGoals;
-                          return (
-                            (goals &&
-                              Object.values(goals).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one goal"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="weight" className="text-white">
-                    Lose Weight
-                  </label>
-                </div>
-                {errors.goals && (
-                  <p className="text-red-200 text-xs mt-2 text-center">
-                    {errors.goals.stronger?.message ||
-                      errors.goals.health?.message ||
-                      errors.goals.muscle?.message ||
-                      errors.goals.performance?.message ||
-                      errors.goals.weight?.message}
-                  </p>
-                )}
               </div>
             </div>
 
@@ -410,141 +335,71 @@ export const InquiryForm = () => {
               <div>
                 <label className="mb-2">
                   <p className="text-xl mb-4 text-white text-center">
-                    Your Interests:
+                    Your Interests (optional):
                   </p>
                 </label>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="learn"
-                    {...register("interests.learn", {
-                      validate: {
-                        atLeastOne: () => {
-                          const interests = watchedInterests;
-                          return (
-                            (interests &&
-                              Object.values(interests).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one interest"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="learn" className="text-white">
-                    Learn to Lift
-                  </label>
+                <div className="flex flex-col gap-y-1 w-max mx-auto">
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="learn"
+                      {...register("interests.learn")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="learn" className="text-white">
+                      Learn to Lift
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="powerlifting"
+                      {...register("interests.powerlifting")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="powerlifting" className="text-white">
+                      Compete in Powerlifting
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="calisthenics"
+                      {...register("interests.calisthenics")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="calisthenics" className="text-white">
+                      Work on Calisthenics Skills
+                    </label>
+                  </div>
+                  <div className="flex items-center h-9">
+                    <input
+                      type="checkbox"
+                      id="handstands"
+                      {...register("interests.handstands")}
+                      className="mr-2"
+                    />
+                    <label htmlFor="handstands" className="text-white">
+                      Learn Handstands
+                    </label>
+                  </div>
                 </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="powerlifting"
-                    {...register("interests.powerlifting", {
-                      validate: {
-                        atLeastOne: () => {
-                          const interests = watchedInterests;
-                          return (
-                            (interests &&
-                              Object.values(interests).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one interest"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="powerlifting" className="text-white">
-                    Compete in Powerlifting
-                  </label>
-                </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="calisthenics"
-                    {...register("interests.calisthenics", {
-                      validate: {
-                        atLeastOne: () => {
-                          const interests = watchedInterests;
-                          return (
-                            (interests &&
-                              Object.values(interests).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one interest"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="calisthenics" className="text-white">
-                    Work on Calisthenics Skills
-                  </label>
-                </div>
-                <div className="flex items-center h-8 ml-10 sm:ml-60">
-                  <input
-                    type="checkbox"
-                    id="handstands"
-                    {...register("interests.handstands", {
-                      validate: {
-                        atLeastOne: () => {
-                          const interests = watchedInterests;
-                          return (
-                            (interests &&
-                              Object.values(interests).some(
-                                (value) => value === true
-                              )) ||
-                            "Please select at least one interest"
-                          );
-                        },
-                      },
-                    })}
-                    className="mr-2"
-                  />
-                  <label htmlFor="handstands" className="text-white">
-                    Learn Handstands
-                  </label>
-                </div>
-                {errors.interests && (
-                  <p className="text-red-200 text-xs mt-2 text-center">
-                    {errors.interests.learn?.message ||
-                      errors.interests.powerlifting?.message ||
-                      errors.interests.calisthenics?.message ||
-                      errors.interests.handstands?.message}
-                  </p>
-                )}
               </div>
+            </div>
             </div>
 
             {/* Message */}
             <div>
               <label htmlFor="message">
-                <p className="text-xl mb-4 text-white text-center">Message:</p>
+                <p className="text-xl mb-4 text-white text-center">Message (optional):</p>
               </label>
               <div>
                 <textarea
                   id="message"
-                  {...register("message", {
-                    required: "Please include a message",
-                    minLength: {
-                      value: 10,
-                      message: "Message must be at least 10 characters",
-                    },
-                  })}
-                  className={`border h-64 w-full p-6 bg-white ${
-                    errors.message ? "border-red-500" : ""
-                  }`}
-                  placeholder="Tell me about yourself and your fitness goals..."
+                  {...register("message")}
+                  className="border h-64 w-full p-6 bg-white"
+                  placeholder="Optional: tell me about yourself and your fitness goals..."
                 />
-                {errors.message && (
-                  <p className="text-red-200 text-xs mt-1">
-                    {errors.message.message}
-                  </p>
-                )}
               </div>
             </div>
           </div>
@@ -555,15 +410,14 @@ export const InquiryForm = () => {
               disabled={isSubmitting}
               className="border solid 1 py-2 px-4 rounded-md bg-brand-yellow hover:bg-brand-yellow-hover disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+              {isSubmitting ? "Joining..." : "Join the Waitlist"}
             </button>
             </div>
 
             {/* Status Messages */}
             {submitStatus === "success" && (
               <div className="bg-brand-teal-200 border border-black text-brand-teal-700 px-4 py-3">
-                Your inquiry has been submitted successfully. I'll be in touch
-                soon!
+                You're on the list! I'll reach out as soon as a spot opens.
               </div>
             )}
             {submitStatus === "error" && (

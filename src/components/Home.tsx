@@ -21,6 +21,9 @@ export const Home = () => {
         </div>
 
       <div className="m-4 gap-4 flex flex-col items-center">
+        <span className="inline-block bg-brand-blue text-white text-sm font-bold uppercase tracking-[0.08em] px-4 py-2">
+          Currently fully booked &mdash; waitlist open
+        </span>
         <p className="text-2xl text-center">
           Are you ready to take your fitness to the next level with in-person
           guidance?

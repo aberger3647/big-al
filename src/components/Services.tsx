@@ -11,13 +11,14 @@ export const Services = () => {
         src1200={images.nikkideadlift_1200}
         src768={images.nikkideadlift_768}
         title="Services"
+        alt="A client performing a barbell deadlift"
       />
 
       <div className="gap-4 flex flex-col items-center">
         <div className="flex flex-col gap-6 m-4">
           <div className="flex flex-col md:flex-row gap-4 justify-around md:items-stretch">
             <div className="border p-6 md:p-8 bg-brand-blue flex-1 flex flex-col">
-              <h2 className="ba-h2-card mb-4 text-white">
+              <h2 className="ba-h2-card mb-4 text-black">
                 1-on-1 Personal Training
               </h2>
               <ul className="text-center flex-grow">
@@ -56,6 +57,7 @@ export const Services = () => {
                     href="https://www.google.com/maps/place/brownie+neighborhood+park/data=!4m2!3m1!1s0x8644c968b477ef8b:0x5f2f42b5d4e46a?sa=X&ved=1t:242&ictx=111"
                     className="font-semibold"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Brownie Neighborhood Park
                   </a>
@@ -67,7 +69,7 @@ export const Services = () => {
             </div>
 
             <div className="border p-6 md:p-8 bg-brand-orange flex-1 flex flex-col">
-              <h2 className="ba-h2-card mb-4 text-white">
+              <h2 className="ba-h2-card mb-4 text-black">
                 Online Training{" "}
               </h2>
               <ul className="flex flex-col text-center flex-grow">
@@ -108,11 +110,12 @@ export const Services = () => {
           </div>
         </div>
 
-        <div className="-mx-12">
+        <div className="md:-mx-12">
           <Image
             src1600={images.nikkibench_1600}
             src1200={images.nikkibench_1200}
             src768={images.nikkibench_768}
+            alt="A client performing a barbell bench press"
           />
         </div>
 

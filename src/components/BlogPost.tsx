@@ -69,9 +69,11 @@ export const BlogPost = () => {
         <img
           src={postImageUrl}
           alt={post.title}
-          className="border rounded-md"
+          className="border"
+          loading="lazy"
+          decoding="async"
           width="550"
-          height="3npm run10"
+          height="310"
         />
       )}
       <h1 className="ba-h1 !text-left !mx-0 !my-2">{post.title}</h1>

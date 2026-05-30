@@ -14,10 +14,11 @@ export const Contact = () => {
         src1200={images.nikkishoulderpress_1200}
         src768={images.nikkishoulderpress_768}
         title="Join the Waitlist"
+        alt="A client performing a barbell shoulder press"
       />
 
       <div className="max-w-3xl mx-auto px-4 mt-8 text-center flex flex-col items-center gap-4">
-        <span className="inline-block bg-brand-blue text-white text-sm font-bold uppercase tracking-[0.08em] px-4 py-2">
+        <span className="inline-block bg-brand-blue text-black text-sm font-bold uppercase tracking-[0.08em] px-4 py-2">
           Coaching is currently full
         </span>
         <p className="text-xl">
@@ -30,7 +31,7 @@ export const Contact = () => {
         {featuredReviews.map((review, index) => (
           <div key={index} className="bg-brand-blue border p-4 flex flex-col">
             <p className="flex-grow">{review.review}</p>
-            <p className="text-right text-white pt-3 font-semibold">
+            <p className="text-right text-black pt-3 font-semibold">
               {review.name}
             </p>
           </div>
@@ -43,11 +44,12 @@ export const Contact = () => {
 </div>
 
       <div className="m-4 gap-4 flex flex-col items-center">
-        <div className="-mx-12">
+        <div className="md:-mx-12">
           <Image
             src1600={images.joe_pullup_768}
             src1200={images.joe_pullup_1200}
             src768={images.joe_pullup_768}
+            alt="A client performing a pull-up"
           />
         </div>
       </div>

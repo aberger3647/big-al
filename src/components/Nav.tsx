@@ -104,12 +104,20 @@ export const Nav = () => {
         </ul>
 
         <div className="md:hidden flex items-center">
-          <button onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
+          <button
+            onClick={toggleNavbar}
+            className="p-2"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
         </div>
       </nav>
 
       {isOpen && isSmallScreen && (
-        <ul className="flex flex-col items-center bg-white border-b">
+        <ul id="mobile-menu" className="flex flex-col items-center bg-white border-b">
           <NavLinks isMobile={true} toggleNavbar={toggleNavbar} />
         </ul>
       )}

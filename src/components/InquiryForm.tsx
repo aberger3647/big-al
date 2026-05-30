@@ -132,14 +132,14 @@ export const InquiryForm = () => {
       >
         <div className="flex flex-col mx-auto">
           <div className="flex gap-8 flex-col">
-            <p className="ba-form-title mb-4 text-white text-center">Join the Waitlist</p>
+            <p className="ba-form-title mb-4 text-black text-center">Join the Waitlist</p>
 
             <div className="flex flex-col gap-4">
               {/* First Name */}
               <div className="flex items-center">
                 <label
                   htmlFor="fname"
-                  className="w-32 text-left text-sm text-white"
+                  className="w-32 text-left text-sm text-black"
                 >
                   First Name:
                 </label>
@@ -154,12 +154,12 @@ export const InquiryForm = () => {
                         message: "First name must be at least 2 characters",
                       },
                     })}
-                    className={`border border-solid bg-white outline-none px-2 py-1 w-full flex-1 ${
+                    className={`border border-solid bg-white focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black px-2 py-1 w-full flex-1 ${
                       errors.fname ? "border-red-500" : ""
                     }`}
                   />
                   {errors.fname && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="mt-1 inline-block bg-red-700 px-2 py-0.5 text-xs text-white">
                       {errors.fname.message}
                     </p>
                   )}
@@ -170,7 +170,7 @@ export const InquiryForm = () => {
               <div className="flex items-center">
                 <label
                   htmlFor="lname"
-                  className="w-32 text-left text-sm text-white"
+                  className="w-32 text-left text-sm text-black"
                 >
                   Last Name:
                 </label>
@@ -185,12 +185,12 @@ export const InquiryForm = () => {
                         message: "Last name must be at least 2 characters",
                       },
                     })}
-                    className={`border border-solid bg-white outline-none px-2 py-1 w-full flex-1 ${
+                    className={`border border-solid bg-white focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black px-2 py-1 w-full flex-1 ${
                       errors.lname ? "border-red-500" : ""
                     }`}
                   />
                   {errors.lname && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="mt-1 inline-block bg-red-700 px-2 py-0.5 text-xs text-white">
                       {errors.lname.message}
                     </p>
                   )}
@@ -201,7 +201,7 @@ export const InquiryForm = () => {
               <div className="flex items-center">
                 <label
                   htmlFor="email"
-                  className="w-32 text-left text-sm text-white"
+                  className="w-32 text-left text-sm text-black"
                 >
                   Email Address:
                 </label>
@@ -216,12 +216,12 @@ export const InquiryForm = () => {
                         message: "Please enter a valid email address",
                       },
                     })}
-                    className={`border border-solid bg-white outline-none px-2 py-1 w-full flex-1 ${
+                    className={`border border-solid bg-white focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black px-2 py-1 w-full flex-1 ${
                       errors.email ? "border-red-500" : ""
                     }`}
                   />
                   {errors.email && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="mt-1 inline-block bg-red-700 px-2 py-0.5 text-xs text-white">
                       {errors.email.message}
                     </p>
                   )}
@@ -232,7 +232,7 @@ export const InquiryForm = () => {
               <div className="flex items-center">
                 <label
                   htmlFor="phone"
-                  className="w-32 text-left text-sm text-white"
+                  className="w-32 text-left text-sm text-black"
                 >
                   Phone Number:
                 </label>
@@ -246,12 +246,12 @@ export const InquiryForm = () => {
                         message: "Please enter a valid phone number",
                       },
                     })}
-                    className={`border border-solid bg-white outline-none px-2 py-1 w-full flex-1 ${
+                    className={`border border-solid bg-white focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black px-2 py-1 w-full flex-1 ${
                       errors.phone ? "border-red-500" : ""
                     }`}
                   />
                   {errors.phone && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="mt-1 inline-block bg-red-700 px-2 py-0.5 text-xs text-white">
                       {errors.phone.message}
                     </p>
                   )}
@@ -263,12 +263,10 @@ export const InquiryForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Goals Section */}
             <div className="flex flex-col">
-              <div>
-                <label className="mb-2">
-                  <p className="text-xl mb-4 text-white text-center">
-                    Your Goals (optional):
-                  </p>
-                </label>
+              <fieldset>
+                <legend className="text-xl mb-4 text-black text-center w-full">
+                  Your Goals (optional):
+                </legend>
 
                 <div className="flex flex-col gap-y-1 w-max mx-auto">
                   <div className="flex items-center h-9">
@@ -278,7 +276,7 @@ export const InquiryForm = () => {
                       {...register("goals.stronger")}
                       className="mr-2"
                     />
-                    <label htmlFor="stronger" className="text-white">
+                    <label htmlFor="stronger" className="text-black">
                       Get Stronger
                     </label>
                   </div>
@@ -289,7 +287,7 @@ export const InquiryForm = () => {
                       {...register("goals.health")}
                       className="mr-2"
                     />
-                    <label htmlFor="health" className="text-white">
+                    <label htmlFor="health" className="text-black">
                       Health & Longevity
                     </label>
                   </div>
@@ -300,7 +298,7 @@ export const InquiryForm = () => {
                       {...register("goals.muscle")}
                       className="mr-2"
                     />
-                    <label htmlFor="muscle" className="text-white">
+                    <label htmlFor="muscle" className="text-black">
                       Build Muscle
                     </label>
                   </div>
@@ -311,7 +309,7 @@ export const InquiryForm = () => {
                       {...register("goals.performance")}
                       className="mr-2"
                     />
-                    <label htmlFor="performance" className="text-white">
+                    <label htmlFor="performance" className="text-black">
                       Athletic Performance
                     </label>
                   </div>
@@ -322,22 +320,20 @@ export const InquiryForm = () => {
                       {...register("goals.weight")}
                       className="mr-2"
                     />
-                    <label htmlFor="weight" className="text-white">
+                    <label htmlFor="weight" className="text-black">
                       Lose Weight
                     </label>
                   </div>
                 </div>
-              </div>
+              </fieldset>
             </div>
 
             {/* Interests Section */}
             <div className="flex flex-col">
-              <div>
-                <label className="mb-2">
-                  <p className="text-xl mb-4 text-white text-center">
-                    Your Interests (optional):
-                  </p>
-                </label>
+              <fieldset>
+                <legend className="text-xl mb-4 text-black text-center w-full">
+                  Your Interests (optional):
+                </legend>
                 <div className="flex flex-col gap-y-1 w-max mx-auto">
                   <div className="flex items-center h-9">
                     <input
@@ -346,7 +342,7 @@ export const InquiryForm = () => {
                       {...register("interests.learn")}
                       className="mr-2"
                     />
-                    <label htmlFor="learn" className="text-white">
+                    <label htmlFor="learn" className="text-black">
                       Learn to Lift
                     </label>
                   </div>
@@ -357,7 +353,7 @@ export const InquiryForm = () => {
                       {...register("interests.powerlifting")}
                       className="mr-2"
                     />
-                    <label htmlFor="powerlifting" className="text-white">
+                    <label htmlFor="powerlifting" className="text-black">
                       Compete in Powerlifting
                     </label>
                   </div>
@@ -368,7 +364,7 @@ export const InquiryForm = () => {
                       {...register("interests.calisthenics")}
                       className="mr-2"
                     />
-                    <label htmlFor="calisthenics" className="text-white">
+                    <label htmlFor="calisthenics" className="text-black">
                       Work on Calisthenics Skills
                     </label>
                   </div>
@@ -379,19 +375,19 @@ export const InquiryForm = () => {
                       {...register("interests.handstands")}
                       className="mr-2"
                     />
-                    <label htmlFor="handstands" className="text-white">
+                    <label htmlFor="handstands" className="text-black">
                       Learn Handstands
                     </label>
                   </div>
                 </div>
-              </div>
+              </fieldset>
             </div>
             </div>
 
             {/* Message */}
             <div>
               <label htmlFor="message">
-                <p className="text-xl mb-4 text-white text-center">Message (optional):</p>
+                <p className="text-xl mb-4 text-black text-center">Message (optional):</p>
               </label>
               <div>
                 <textarea
@@ -408,7 +404,7 @@ export const InquiryForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="border solid 1 py-2 px-4 rounded-md bg-brand-yellow hover:bg-brand-yellow-hover disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border border-solid py-2 px-4 rounded-md bg-brand-yellow hover:bg-brand-yellow-hover disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Joining..." : "Join the Waitlist"}
             </button>

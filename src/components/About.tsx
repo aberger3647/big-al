@@ -11,6 +11,7 @@ export const About = () => {
         src1200={images.headshot_1200}
         src768={images.headshot_768}
               title="About Alex"
+              alt="Alex Berger, certified personal trainer"
             />
 
       <p className="m-4 max-w-4xl">

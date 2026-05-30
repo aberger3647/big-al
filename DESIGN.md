@@ -65,12 +65,12 @@ components:
     rounded: "{rounded.button}"
   card-blue:
     backgroundColor: "{colors.sky-blue}"
-    textColor: "{colors.chalk-white}"
+    textColor: "{colors.ink-black}"
     rounded: "{rounded.none}"
     padding: "24px"
   card-orange:
     backgroundColor: "{colors.coral-orange}"
-    textColor: "{colors.chalk-white}"
+    textColor: "{colors.ink-black}"
     rounded: "{rounded.none}"
     padding: "24px"
   input-text:
@@ -112,7 +112,7 @@ A bright, athletic, fully-committed palette: saturated primaries blocked against
 - **Signal Yellow** (`#facc15`): The brand's signature. Carries the sticky nav, the mobile menu, and every primary call to action. When a visitor pictures this site, they picture this yellow.
 
 ### Secondary
-- **Sky Blue** (`#40bdf7`): A full card-field color, used to drench whole service panels (e.g. "1-on-1 Personal Training") with white headings on top.
+- **Sky Blue** (`#40bdf7`): A full card-field color, used to drench whole service panels (e.g. "1-on-1 Personal Training") with Ink Black headings on top.
 - **Coral Orange** (`#ff6748`): The companion card-field color and the background of the waitlist inquiry form. Paired with Sky Blue to differentiate side-by-side offerings.
 
 ### Tertiary
@@ -121,7 +121,7 @@ A bright, athletic, fully-committed palette: saturated primaries blocked against
 
 ### Neutral
 - **Ink Black** (`#000000`): The universal keyline. Borders, the monogram disc, body text, and dividers. The structural glue of the entire system.
-- **Chalk White** (`#ffffff`): Heading text on color fields, input backgrounds, and breathing space.
+- **Chalk White** (`#ffffff`): Input backgrounds and breathing space. Not used for text on brand-color fields (see the Ink Text Rule).
 
 ### Supporting tints (hover & divider depth)
 - **Deep Signal Yellow** (`#eab308`): The pressed/hover state of Signal Yellow CTAs.
@@ -130,7 +130,7 @@ A bright, athletic, fully-committed palette: saturated primaries blocked against
 ### Named Rules
 **The One Hue Per Panel Rule.** A panel, card, or nav commits to exactly one brand color across its whole field. Never blend two brand hues inside a single surface, and never gradient between them. Differentiation between adjacent panels comes from choosing *different* solid hues (blue beside orange), not from shading one.
 
-**The Black-Text-On-Bright Rule.** Bright fields (Signal Yellow, Pale Teal) pair with Ink Black text; deeper fields (Sky Blue, Coral Orange, Pool Teal) pair with Chalk White heading text. White-on-light is forbidden, both because it is illegible and because it breaks the WCAG AAA contrast target.
+**The Ink Text Rule.** Every brand-color field (Signal Yellow, Sky Blue, Coral Orange, Pool Teal, Pale Teal) carries Ink Black text. White-on-color is forbidden: these hues are too bright for white to pass contrast (white-on-blue measures ~2.1:1, white-on-orange ~2.9:1, both failing WCAG AA). Black on the same fields clears 6:1 or better. The black text doubles as a tie to the keyline system, so the lettering looks painted onto the sign rather than floated over it.
 
 ## 3. Typography
 
@@ -168,7 +168,7 @@ The only "lift" in the system is interaction-driven color: a CTA darkens from Si
 
 ### Cards / Panels
 - **Corner Style:** Sharp, no radius (0px). The black keyline is the edge.
-- **Background:** One brand color per card (Sky Blue, Coral Orange, or Pool Teal). Headings sit in Chalk White (`.ba-h2-card`).
+- **Background:** One brand color per card (Sky Blue, Coral Orange, or Pool Teal). Headings sit in Ink Black (`.ba-h2-card`).
 - **Shadow Strategy:** None. See Elevation, the Flat Ink Rule.
 - **Border:** 1px Ink Black on all sides (the global default border color).
 - **Internal Padding:** 24px to 32px (`p-6` to `p-8`).
@@ -191,7 +191,7 @@ A solid Ink Black circle with "BA" set in Chalk White Anton, centered. Inline SV
 ### Do:
 - **Do** commit each panel to one solid brand hue with a 1px Ink Black keyline (the One Hue Per Panel Rule).
 - **Do** set all headings, the wordmark, and short labels in Anton uppercase with ~0.86 leading; set all running copy in Archivo.
-- **Do** pair bright fields with black text and deep fields with white headings, and verify every pairing against WCAG AAA (7:1 body, 4.5:1 large).
+- **Do** set Ink Black text on every brand-color field (the Ink Text Rule), and verify every pairing against WCAG AAA (7:1 body, 4.5:1 large).
 - **Do** convey depth with black borders and adjacent color contrast, keeping every surface flat.
 - **Do** add a visible focus ring to every interactive element; `outline-none` alone fails the AAA keyboard requirement.
 - **Do** keep one obvious next step per screen, the Signal Yellow "Join the Waitlist" CTA.
@@ -204,4 +204,4 @@ A solid Ink Black circle with "BA" set in Chalk White Anton, centered. Inline SV
 - **Don't** use shadows, blurs, or gradients to separate elements (the Flat Ink Rule). Add a black keyline or change a color field instead.
 - **Don't** gradient-fill or `background-clip: text` the headings; Anton in one solid color only.
 - **Don't** blend two brand hues inside a single surface, and never set body paragraphs in Anton.
-- **Don't** put white text on a bright field (white-on-yellow, white-on-pale-teal); it is illegible and fails AAA.
+- **Don't** put white text on any brand-color field (white-on-blue ~2.1:1, white-on-orange ~2.9:1); it is illegible and fails WCAG AA. Use Ink Black.

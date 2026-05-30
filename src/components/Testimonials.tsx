@@ -10,6 +10,7 @@ export const Testimonials = () => {
         src1200={images.nikkideadlift_1200}
         src768={images.nikkideadlift_768}
         title="Testimonials"
+        alt="A client performing a barbell deadlift"
       />
 
     <div className='mx-auto max-w-5xl flex flex-col items-center my-2'>
@@ -18,7 +19,7 @@ export const Testimonials = () => {
      index % 2 === 0 ? 'self-start' : 'self-end'
    }`}>
      <p>{review.review}</p>
-     <p className="text-xl text-right text-white pt-5">{review.name}</p>
+     <p className="text-xl text-right text-black pt-5">{review.name}</p>
    </div>
  ))}
 </div>

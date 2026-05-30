@@ -44,6 +44,7 @@ export const Blog = () => {
         src1200={images.masonsquat_1200}
         src768={images.masonsquat_768}
         title="Blog"
+        alt="A client performing a barbell squat"
       />
 
       <ul className="flex flex-col gap-y-4 m-6">

@@ -72,7 +72,7 @@
       "refersTo": "card-blue",
       "description": "A service panel drenched in one brand hue with a white Anton heading and a darker in-card divider.",
       "html": "<div class=\"ds-card-blue\"><h2 class=\"ds-card-blue__title\">1-on-1 Personal Training</h2><p class=\"ds-card-blue__body\">One hour of hands-on guidance in calisthenics.</p><hr class=\"ds-card-blue__rule\" /><p class=\"ds-card-blue__body\">Learn to safely and effectively perform bodyweight exercises.</p></div>",
-      "css": ".ds-card-blue { box-sizing: border-box; background: #40bdf7; color: #fff; border: 1px solid #000; border-radius: 0; padding: 32px; max-width: 420px; } .ds-card-blue__title { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.005em; font-size: 2rem; margin: 0 0 16px; text-align: center; } .ds-card-blue__body { font-family: Archivo, system-ui, sans-serif; line-height: 1.6; text-align: center; margin: 0; } .ds-card-blue__rule { border: none; border-top: 1px solid #009be3; margin: 24px 80px; }"
+      "css": ".ds-card-blue { box-sizing: border-box; background: #40bdf7; color: #000; border: 1px solid #000; border-radius: 0; padding: 32px; max-width: 420px; } .ds-card-blue__title { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.005em; font-size: 2rem; margin: 0 0 16px; text-align: center; } .ds-card-blue__body { font-family: Archivo, system-ui, sans-serif; line-height: 1.6; text-align: center; margin: 0; } .ds-card-blue__rule { border: none; border-top: 1px solid #009be3; margin: 24px 80px; }"
     },
     {
       "name": "Text Input",
@@ -119,14 +119,14 @@
     ],
     "rules": [
       { "name": "The One Hue Per Panel Rule", "body": "A panel, card, or nav commits to exactly one brand color across its whole field. Never blend two brand hues inside a single surface, and never gradient between them. Differentiation between adjacent panels comes from choosing different solid hues, not from shading one.", "section": "colors" },
-      { "name": "The Black-Text-On-Bright Rule", "body": "Bright fields (Signal Yellow, Pale Teal) pair with Ink Black text; deeper fields (Sky Blue, Coral Orange, Pool Teal) pair with Chalk White heading text. White-on-light is forbidden, both because it is illegible and because it breaks the WCAG AAA contrast target.", "section": "colors" },
+      { "name": "The Ink Text Rule", "body": "Every brand-color field (Signal Yellow, Sky Blue, Coral Orange, Pool Teal, Pale Teal) carries Ink Black text. White-on-color is forbidden: these hues are too bright for white to pass contrast (white-on-blue ~2.1:1, white-on-orange ~2.9:1, both failing WCAG AA). Black on the same fields clears 6:1 or better.", "section": "colors" },
       { "name": "The Anton-Shouts-Archivo-Speaks Rule", "body": "Anton is for headings, the wordmark, and nothing longer than a short phrase. It is always uppercase with leading near 0.86. The moment text needs to be read in sentences, it is Archivo. Never set a paragraph in Anton, never set a hero heading in Archivo.", "section": "typography" },
       { "name": "The Flat Ink Rule", "body": "If you reach for a box-shadow, a blur, or a gradient to separate two things, stop: add a black keyline or change one of the two color fields instead. Shadows are forbidden as a default decoration. The painted sign has no drop shadow.", "section": "elevation" }
     ],
     "dos": [
       "Do commit each panel to one solid brand hue with a 1px Ink Black keyline (the One Hue Per Panel Rule).",
       "Do set all headings, the wordmark, and short labels in Anton uppercase with ~0.86 leading; set all running copy in Archivo.",
-      "Do pair bright fields with black text and deep fields with white headings, and verify every pairing against WCAG AAA (7:1 body, 4.5:1 large).",
+      "Do set Ink Black text on every brand-color field (the Ink Text Rule), and verify every pairing against WCAG AAA (7:1 body, 4.5:1 large).",
       "Do convey depth with black borders and adjacent color contrast, keeping every surface flat.",
       "Do add a visible focus ring to every interactive element; outline-none alone fails the AAA keyboard requirement.",
       "Do keep one obvious next step per screen, the Signal Yellow 'Join the Waitlist' CTA."
@@ -139,7 +139,7 @@
       "Don't use shadows, blurs, or gradients to separate elements (the Flat Ink Rule). Add a black keyline or change a color field instead.",
       "Don't gradient-fill or background-clip: text the headings; Anton in one solid color only.",
       "Don't blend two brand hues inside a single surface, and never set body paragraphs in Anton.",
-      "Don't put white text on a bright field (white-on-yellow, white-on-pale-teal); it is illegible and fails AAA."
+      "Don't put white text on any brand-color field (white-on-blue ~2.1:1, white-on-orange ~2.9:1); it is illegible and fails WCAG AA. Use Ink Black."
     ]
   }
 }

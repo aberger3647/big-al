@@ -15,13 +15,14 @@ export const About = () => {
 
       <p className="m-4 max-w-4xl">
         Hey! I'm Alex Berger, aka Big Al. I'm a Certified Personal Trainer in
-        Austin, TX. I grew up in St. Petersburg, Florida, playing tennis, riding
+        St. Petersburg, FL. I grew up here in St. Petersburg, playing tennis, riding
         my bike, and rollerblading. My last year of college I learned to lift
         weights and quickly became addicted to it! At the same time, I started a
         yoga and handstand practice. When I moved to Austin after graduation, I
-        joined Hyde Park Gym. I discovered and fell in love with powerlifting.
-        The more I moved, the better I felt, and as a goal-oriented person, I
-        loved realizing hard-won progress.
+        joined Hyde Park Gym, where I discovered and fell in love with
+        powerlifting. The more I moved, the better I felt, and as a goal-oriented
+        person, I loved realizing hard-won progress. I've since moved back home
+        to St. Petersburg, where I now coach.
       </p>
       <p className="m-4 max-w-4xl">
         Most days, you can find me moving my body in some way! A few of my

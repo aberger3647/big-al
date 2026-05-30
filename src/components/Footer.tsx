@@ -36,9 +36,7 @@ export const Footer = () => {
           <h3 className="text-sm font-bold uppercase tracking-[0.06em] mb-3">Location</h3>
           <div className="flex">
             <div className="flex flex-col gap-2 mb-3">
-              <p>Brownie Neighborhood Park</p>
-              <p>10000 Brownie Dr</p>
-              <p>Austin, TX 78753</p>
+              <p>St. Petersburg, FL</p>
             </div>
           </div>
         </div>

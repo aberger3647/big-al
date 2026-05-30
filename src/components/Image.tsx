@@ -11,7 +11,7 @@ export const Image = ({ src1600, src1200, src768, alt = "", className }: ImagePr
       <source media="(min-width:1600px)" srcSet={src1600} />
       <source media="(min-width:1200px)" srcSet={src1200} />
       <source media="(min-width:768px)" srcSet={src768} />
-     <img className={`border ${className || ''}`}  src={new URL(`${src768}`, import.meta.url).href} alt={alt} />
+     <img className={`border rounded-md ${className || ''}`}  src={new URL(`${src768}`, import.meta.url).href} alt={alt} />
     </picture>
   )
 }

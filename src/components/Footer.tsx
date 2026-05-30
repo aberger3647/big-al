@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import { ObfuscatedEmail, ObfuscatedPhone } from "./ObfuscatedContact";
 
 export const Footer = () => {
   return (
@@ -11,8 +12,8 @@ export const Footer = () => {
           <h3 className="text-sm font-bold uppercase tracking-[0.06em] mb-3">Contact</h3>
           <div className="flex flex-col gap-4">
             <p>Alex Berger</p>
-            <p>info@bigalstrength.com</p>
-            <p>727 504 4123</p>
+            <p><ObfuscatedEmail /></p>
+            <p><ObfuscatedPhone /></p>
           </div>
         </div>
 

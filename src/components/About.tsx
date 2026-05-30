@@ -1,6 +1,7 @@
 import { Header } from "./Header"
 import { images } from "../assets/optimized_photos";
 import { Button } from "./Button";
+import { ObfuscatedEmail, ObfuscatedPhone } from "./ObfuscatedContact";
 
 export const About = () => {
   return (
@@ -32,9 +33,9 @@ export const About = () => {
       </p>
       <p className="m-4 max-w-4xl">
         I'm currently fully booked, but new spots open up from time to time.
-        Want to train with me? Join the waitlist below, or call/text me at
-        727-504-4123 or email info@bigalstrength.com and I'll reach out as soon
-        as a spot opens.
+        Want to train with me? Join the waitlist below, or call/text me at{" "}
+        <ObfuscatedPhone /> or email <ObfuscatedEmail /> and I'll reach out as
+        soon as a spot opens.
       </p>
            <div className="self-center">
           <Button />

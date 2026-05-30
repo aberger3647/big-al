@@ -69,7 +69,7 @@ export const BlogPost = () => {
         <img
           src={postImageUrl}
           alt={post.title}
-          className="border"
+          className="border rounded-md"
           width="550"
           height="3npm run10"
         />

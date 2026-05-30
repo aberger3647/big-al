@@ -13,7 +13,7 @@ export const Header = ({ src1600, src1200, src768, title, alt }: HeaderProps) =>
     <div className="flex flex-col justify-center items-center">
       <h1 className="ba-h1">{title}</h1>
       <div className=" w-full md:max-w-5xl">
-        <Image src1600={src1600} src1200={src1200} src768={src768} alt={alt ?? title} className="mx-auto block"/>
+        <Image src1600={src1600} src1200={src1200} src768={src768} alt={alt ?? title} className="max-h-[40vh] md:max-h-[45vh]"/>
       </div>
     </div>
   );

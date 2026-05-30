@@ -15,7 +15,7 @@ export const Home = () => {
             src1600={images.headshot2_1000}
             src1200={images.headshot2_1000}
             src768={images.headshot2_768}
-            className="h-full w-full object-cover"
+            className="max-h-[60vh] md:max-h-[70vh]"
             alt="Headshot of Alex"
           />
         </div>

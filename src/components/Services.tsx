@@ -116,6 +116,7 @@ export const Services = () => {
             src1200={images.nikkibench_1200}
             src768={images.nikkibench_768}
             alt="A client performing a barbell bench press"
+            className="max-h-[55vh]"
           />
         </div>
 

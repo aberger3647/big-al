@@ -50,6 +50,7 @@ export const Contact = () => {
             src1200={images.joe_pullup_1200}
             src768={images.joe_pullup_768}
             alt="A client performing a pull-up"
+            className="max-h-[55vh]"
           />
         </div>
       </div>

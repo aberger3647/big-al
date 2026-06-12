@@ -1,0 +1,5 @@
+# Public endpoint: the contact form is submitted from the browser with no user
+# session, so it must be invocable without a JWT (same as moongazing's
+# send-email / get-places). Validation + the honeypot live inside the function.
+[functions.submit-inquiry]
+verify_jwt = false

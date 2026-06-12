@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { submitInquiry } from "../utils/submitInquiry";
 
 // TypeScript interfaces
 interface FormData {
@@ -21,14 +22,7 @@ interface FormData {
     handstands?: boolean;
   };
   message: string;
-}
-
-// Extend form attributes for Netlify
-declare module "react" {
-  interface FormHTMLAttributes<T> {
-    netlify?: boolean;
-    "netlify-honeypot"?: string;
-  }
+  "bot-field"?: string;
 }
 
 export const InquiryForm = () => {
@@ -44,6 +38,14 @@ export const InquiryForm = () => {
   >("");
 
   const onSubmit = async (data: FormData) => {
+    // Honeypot: a real user never fills this; pretend success and bail.
+    if (data["bot-field"]) {
+      setSubmitStatus("success");
+      reset();
+      setTimeout(() => setSubmitStatus(""), 5000);
+      return;
+    }
+
     try {
       setSubmitStatus("submitting");
 
@@ -90,30 +92,24 @@ export const InquiryForm = () => {
             .join(", ")
         : "";
 
-      const formData: Record<string, string> = {
-        "form-name": "inquiry",
+      const result = await submitInquiry({
         fname: data.fname,
         lname: data.lname,
         email: data.email,
         phone: data.phone || "",
-        goals: goals,
-        interests: interests,
-        message: data.message,
-      };
-
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        goals,
+        interests,
+        message: data.message || "",
+        "bot-field": "",
       });
 
-      if (response.ok) {
+      if (result.success) {
         setSubmitStatus("success");
         reset();
         // Clear success message after 5 seconds
         setTimeout(() => setSubmitStatus(""), 5000);
       } else {
-        throw new Error("Form submission failed");
+        throw new Error(result.error ?? "Form submission failed");
       }
     } catch (error) {
       setSubmitStatus("error");
@@ -126,10 +122,14 @@ export const InquiryForm = () => {
       <form
         className="p-6 border bg-brand-orange m-4 md:max-w-3xl w-full"
         onSubmit={handleSubmit(onSubmit)}
-        name="inquiry"
-        method="POST"
-        data-netlify="true"
       >
+        {/* Honeypot: hidden from humans; bots that auto-fill forms reveal themselves. */}
+        <p className="hidden" aria-hidden="true">
+          <label>
+            Don't fill this out if you're human:
+            <input tabIndex={-1} autoComplete="off" {...register("bot-field")} />
+          </label>
+        </p>
         <div className="flex flex-col mx-auto">
           <div className="flex gap-8 flex-col">
             <p className="ba-form-title mb-4 text-black text-center">Join the Waitlist</p>

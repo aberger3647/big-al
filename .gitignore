@@ -11,6 +11,15 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+
+# Local env files (keep .env.example tracked)
+.env
+.env.*
+!.env.example
+
+# Local secret: Resend API key file (never commit)
+resendkey
 
 # Editor directories and files
 .vscode/*
